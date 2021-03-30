@@ -1,15 +1,15 @@
 from .db import db
 from sqlalchemy.orm import relationship
 
-class Favorites(db.Model):
+class Favorite(db.Model):
     __tablename__ = 'favorites'
     id = db.Column(db.Integer, primary_key =True)
     movie_id = db.Column(db.Integer,db.ForeignKey("movies.id"))
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
 
-    user = relationship("User", back_populates='favorites')
-    movie = relationship("Movie", back_populates='favorites')
+    # user = relationship("User", back_populates='favorite')
+    # movie = relationship("Movie")
 
     def to_dict(self):
         return {

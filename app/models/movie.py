@@ -1,5 +1,5 @@
 from .db import db
-
+from sqlalchemy.orm import relationship
 
 class Movie(db.Model):
     __tablename__ = "movies"
@@ -12,17 +12,18 @@ class Movie(db.Model):
     category_id = db.Column(db.Integer,db.ForeignKey("categories.id"),nullable = False)
 
 
-    category = relationship("Category", back_populates='movies')
-    review = relationship("Review", back_populates='movies')
+    # category = relationship("Category", back_populates='movie')
+    review = relationship("Review", backref='movies')
+    favorite = relationship("Favorite", backref='movies')
 
 
-     def to_dict(self):
+    def to_dict(self):
         return {
             "id": self.id,
             "movie_name": self.movie_name,
-            "actors": self.actors
-            "movie_date": self.movie_date
-            "movie_info": self.movie_info
+            "actors": self.actors,
+            "movie_date": self.movie_date,
+            "movie_info": self.movie_info,
             "movie_url": self.movie_url,
-            "category_id": self.category_id
+            "category_id": self.category_id,
         }

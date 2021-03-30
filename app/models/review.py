@@ -9,8 +9,8 @@ class Review(db.Model):
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
 
-    user = relationship("User", back_populates='reviews')
-    movie = relationship("Movie", back_populates='reviews')
+    # user = relationship("User", back_populates='review')
+    # movie = relationship("Movie", back_populates='review')
 
     def to_dict(self):
         return {
