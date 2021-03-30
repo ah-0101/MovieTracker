@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../services/auth';
+// import ReactPlayer from 'react-player'
+// import MC from './MC.mp4'
 
 const SignUpForm = ({authenticated, setAuthenticated}) => {
   const [username, setUsername] = useState("");
@@ -39,6 +41,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   }
 
   return (
+    <>
     <form onSubmit={onSignUp}>
       <div>
         <label>User Name</label>
@@ -79,6 +82,10 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
       </div>
       <button type="submit">Sign Up</button>
     </form>
+      {/* <video autoplay loop controls >
+        <source src={MC} type="video/mp4"/>
+      </video>     */}
+    </>
   );
 };
 

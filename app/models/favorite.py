@@ -1,7 +1,7 @@
 from .db import db
 from sqlalchemy.orm import relationship
 
-class Favorites(db.Model):
+class Favorite(db.Model):
     __tablename__ = 'favorites'
     id = db.Column(db.Integer, primary_key =True)
     movie_id = db.Column(db.Integer,db.ForeignKey("movies.id"))
