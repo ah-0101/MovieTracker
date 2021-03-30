@@ -11,8 +11,8 @@ class User(db.Model, UserMixin):
   email = db.Column(db.String(255), nullable = False, unique = True)
   hashed_password = db.Column(db.String(255), nullable = False)
 
-  favorite = relationship("Favorite", back_populates='users')
-  reviews = relationship("Review", back_populates='users')
+  favorite = relationship("Favorite", backref='users')
+  review = relationship("Review", backref='users')
 
 
 
@@ -34,5 +34,8 @@ class User(db.Model, UserMixin):
     return {
       "id": self.id,
       "username": self.username,
-      "email": self.email
+      "email": self.email,
+      # "favorite": self.favorite.to_dict(),
+      # "review": self.review.to_dict()
+
     }

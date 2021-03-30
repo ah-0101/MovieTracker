@@ -8,8 +8,8 @@ class Favorite(db.Model):
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
 
-    user = relationship("User", back_populates='favorites')
-    movie = relationship("Movie", back_populates='favorites')
+    # user = relationship("User", back_populates='favorite')
+    # movie = relationship("Movie")
 
     def to_dict(self):
         return {

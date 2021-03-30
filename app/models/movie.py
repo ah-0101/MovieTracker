@@ -12,8 +12,9 @@ class Movie(db.Model):
     category_id = db.Column(db.Integer,db.ForeignKey("categories.id"),nullable = False)
 
 
-    category = relationship("Category", back_populates='movies')
-    review = relationship("Review", back_populates='movies')
+    # category = relationship("Category", back_populates='movie')
+    review = relationship("Review", backref='movies')
+    favorite = relationship("Favorite", backref='movies')
 
 
     def to_dict(self):
