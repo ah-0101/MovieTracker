@@ -7,20 +7,24 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./services/auth";
+import {useDispatch, useSelector} from 'react-redux';
+import { restoreUser } from "./store/session";
 
 function App() {
+  const dispatch = useDispatch()
+  const sessionUser = useSelector((state) => state.user);
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     (async() => {
-      const user = await authenticate();
+      const user = await dispatch(restoreUser());
       if (!user.errors) {
         setAuthenticated(true);
       }
       setLoaded(true);
     })();
-  }, []);
+  }, [dispatch]);
 
   if (!loaded) {
     return null;
