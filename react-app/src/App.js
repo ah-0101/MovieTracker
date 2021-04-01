@@ -10,7 +10,6 @@ import Movie from "./components/Movie";
 import { authenticate } from "./services/auth";
 import {useDispatch, useSelector} from 'react-redux';
 import { restoreUser } from "./store/session";
-import FirstPage from './components/FirstPage'
 import LoginFormModal from './components/auth/LoginFormModal';
 
 function App() {
