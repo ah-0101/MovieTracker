@@ -1,12 +1,67 @@
-   /* * {
-       height: 100%;
-   } */
-   
-   .img {
-       min-width: 200vh;
-       height: 100vh;
-       background-image: url('./art.jpg');
-       background-position: center;
-       background-repeat: no-repeat;
-       background-size: cover;
-   }
+    * {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        /* position: relative; */
+    }
+    
+    .img {
+        position: absolute;
+        left: -8px;
+        height: 100vh;
+        width: 210vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('./Screen-Ads.jpg');
+        background-size: cover;
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    
+    .h12 {
+        /* color: rgb(255, 255, 255);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        left: 600px; */
+        /* bottom: auto; */
+        /* right: bottom; */
+        /* margin-right: 40%; */
+        /* transform: translate(-30%, 50%); */
+    }
+    
+    .h13 {
+        /* color: rgb(255, 255, 255);
+        position: absolute;
+        top: 100px;
+        left: 30%;
+        bottom: auto;
+        right: bottom;
+        margin-right: 50%;
+        transform: translate(-20%, 50%); */
+    }
+    
+    .outer-text {
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .outer-outer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
