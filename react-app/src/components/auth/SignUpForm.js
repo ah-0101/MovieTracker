@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux"
 import { restoreUser } from "../../store/session";
 // import ReactPlayer from 'react-player'
 // import MC from './MC.mp4'
+import './signup.css'
 
 const SignUpForm = ({authenticated, setAuthenticated}) => {
   const dispatch = useDispatch()
