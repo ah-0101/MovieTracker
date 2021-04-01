@@ -10,7 +10,7 @@ import Movie from "./components/Movie";
 import { authenticate } from "./services/auth";
 import {useDispatch, useSelector} from 'react-redux';
 import { restoreUser } from "./store/session";
-import LoginFormModal from './components/auth/LoginFormModal';
+import LoginPage from './components/LoginPage';
 
 function App() {
   const dispatch = useDispatch()
@@ -38,8 +38,7 @@ function App() {
       <NavBar setAuthenticated={setAuthenticated} />
       <Switch>
         <Route path="/login" exact={true}>
-        {/* <LoginFormModal /> */}
-         
+         <LoginPage/>
         </Route>
         <Route path="/sign-up" exact={true}>
           <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
