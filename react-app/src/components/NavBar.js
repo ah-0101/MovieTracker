@@ -18,6 +18,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import LoginFormModal from './auth/LoginFormModal'
+import SignupFormModal from './auth/SignupFormModal'
 const useStyles = makeStyles((theme) => ({
   nav:{
     background: 'black'
@@ -210,9 +211,10 @@ export default function NavBar({ setAuthenticated }) {
           <>
             <IconButton color="inherit">
               <Badge  color="secondary">
-              <NavLink to="/sign-up" exact={true} activeClassName="active">
+              {/* <NavLink to="/sign-up" exact={true} activeClassName="active">
             Sign Up
-          </NavLink>
+          </NavLink> */}
+          <SignupFormModal/>
               </Badge>
             </IconButton>
             <IconButton  color="inherit">
