@@ -21,7 +21,7 @@ import LoginFormModal from './auth/LoginFormModal'
 import SignupFormModal from './auth/SignupFormModal'
 const useStyles = makeStyles((theme) => ({
   nav:{
-    background: 'black'
+    background: 'inherit'
   },
   grow: {
     flexGrow: 1,
