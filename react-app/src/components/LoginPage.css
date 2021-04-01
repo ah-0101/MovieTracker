@@ -1,0 +1,12 @@
+   /* * {
+       height: 100%;
+   } */
+   
+   .img {
+       min-width: 200vh;
+       height: 100vh;
+       background-image: url('./art.jpg');
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+   }

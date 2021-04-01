@@ -176,8 +176,10 @@ export default function NavBar({ setAuthenticated }) {
   );
 
   return (
+    <nav>
+      <ul>
     <div className={classes.grow}>
-      <AppBar className={classes.nav} position="static">
+      <AppBar className={classes.nav} >
         <Toolbar>
           <IconButton
             edge="start"
@@ -253,6 +255,8 @@ export default function NavBar({ setAuthenticated }) {
       {renderMobileMenu}
       {renderMenu}
     </div>
+    </ul>
+    </nav>
   );
 }
 // const NavBar = ({ setAuthenticated }) => {
