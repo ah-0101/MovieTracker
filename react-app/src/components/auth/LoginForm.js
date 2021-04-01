@@ -3,8 +3,11 @@ import { Redirect, useHistory } from "react-router-dom";
 import { login } from "../../services/auth";
 import {useDispatch} from "react-redux";
 import {loginUser} from '../../store/session';
-import FirstPage from '../FirstPage'
+
 import "./loginform.css"
+
+
+
 const LoginForm = ({ authenticated, setAuthenticated }) => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
