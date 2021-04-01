@@ -1,9 +1,13 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import sessionReducer from './session'
+import sessionReducer from "./session"
+import MoviesReducer from "./movies"
+import CategoryReducer from "./category"
 
 const rootReducer = combineReducers({
-    session: sessionReducer
+    session: sessionReducer,
+    movies: MoviesReducer,
+    categories: CategoryReducer,
 });
 
 let enhancer;

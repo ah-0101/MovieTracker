@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
+import Movie from "./components/Movie";
 import { authenticate } from "./services/auth";
 import {useDispatch, useSelector} from 'react-redux';
 import { restoreUser } from "./store/session";
@@ -25,10 +26,11 @@ function App() {
       setLoaded(true);
     })();
   }, [dispatch]);
-
-  if (!loaded) {
-    return null;
-  }
+  
+//! user athuntectated EDIT on the login form
+  // if (!loaded) {
+  //   return null;
+  // }
 
   return (
     <BrowserRouter>
@@ -49,8 +51,9 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <h1>My Home Page</h1>
+        <ProtectedRoute path="/" exact={true}>
+          <h1>My Home Page Movies</h1>
+          <Movie />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

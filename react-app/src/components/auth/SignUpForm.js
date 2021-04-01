@@ -47,7 +47,6 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   }
 
   return (
-    <>
     <form onSubmit={onSignUp}>
       <div>
         <label>User Name</label>
@@ -88,10 +87,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
       </div>
       <button type="submit">Sign Up</button>
     </form>
-      {/* <video autoplay loop controls >
-        <source src={MC} type="video/mp4"/>
-      </video>     */}
-    </>
+
   );
 };
 
