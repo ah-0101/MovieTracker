@@ -11,6 +11,7 @@ import { authenticate } from "./services/auth";
 import {useDispatch, useSelector} from 'react-redux';
 import { restoreUser } from "./store/session";
 import FirstPage from './components/FirstPage'
+import LoginFormModal from './components/auth/LoginFormModal';
 
 function App() {
   const dispatch = useDispatch()
@@ -38,7 +39,7 @@ function App() {
       <NavBar setAuthenticated={setAuthenticated} />
       <Switch>
         <Route path="/login" exact={true}>
-        <FirstPage/>
+        {/* <LoginFormModal /> */}
          
         </Route>
         <Route path="/sign-up" exact={true}>

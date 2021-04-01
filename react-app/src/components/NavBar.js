@@ -17,7 +17,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-
+import LoginFormModal from './auth/LoginFormModal'
 const useStyles = makeStyles((theme) => ({
   nav:{
     background: 'black'
@@ -217,9 +217,9 @@ export default function NavBar({ setAuthenticated }) {
             </IconButton>
             <IconButton  color="inherit">
               <Badge  color="secondary">
-              <NavLink to="/login" exact={true} activeClassName="active">
-            Login
-          </NavLink>
+              {/* <NavLink to="/login" exact={true} activeClassName="active"> */}
+             <LoginFormModal/>
+          {/* </NavLink> */}
               </Badge>
             </IconButton>
             </>
