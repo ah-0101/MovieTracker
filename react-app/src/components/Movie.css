@@ -1,21 +1,35 @@
-.outer-category {
-    background-color: yellow;
-    width: 100vw;
-}
+/* .outer-category {
+    /* background-color: yellow; */
 
-.outer-movie {
+
+/* width: 100vw; */
+
+
+/* } */
+
+
+/* .outer-movie {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-}
+} */
 
-.inner-movie {
-    background-color: yellow;
-    width: 15vw;
+
+/* .inner-movie { */
+
+
+/* background-color: yellow; */
+
+
+/* width: 15vw;
     height: 20vh;
-}
+} */
 
-.inner-movie:hover {
+
+/* .inner-movie:hover {
     width: 20vw;
     height: 35vh;
-}
+} */
+
+
+/* .inner-video {} */

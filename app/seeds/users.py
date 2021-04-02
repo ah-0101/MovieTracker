@@ -6,13 +6,13 @@ def seed_users():
 
     demo = User(username='Demo', email='demo@aa.io',
                 password='password')
-    # user1 = User(username='Mike', email='mike@aa.io',password='password')
+    user1 = User(username='Mike', email='mike@aa.io',password='password')
     # user2 = User(username='john', email='john@aa.io',password='password')
     # user3 = User(username='emad', email='emad@aa.io',password='password')
     # user4 = User(username='rami', email='rami@aa.io',password='password')
 
     db.session.add(demo)
-    # db.session.add(user1)
+    db.session.add(user1)
     # db.session.add(user2)
     # db.session.add(user3)
     # db.session.add(user4)
