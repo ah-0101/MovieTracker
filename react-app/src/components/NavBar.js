@@ -14,6 +14,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
@@ -21,7 +22,7 @@ import LoginFormModal from './auth/LoginFormModal'
 import SignupFormModal from './auth/SignupFormModal'
 const useStyles = makeStyles((theme) => ({
   nav:{
-    background: 'inherit'
+    background: 'black'
   },
   grow: {
     flexGrow: 1,
@@ -174,10 +175,9 @@ export default function NavBar({ setAuthenticated }) {
       </MenuItem>
     </Menu>
   );
-
+  
   return (
-    <nav>
-      <ul>
+ 
     <div className={classes.grow}>
       <AppBar className={classes.nav} >
         <Toolbar>
@@ -188,7 +188,10 @@ export default function NavBar({ setAuthenticated }) {
             aria-label="open drawer"
           >
             <NavLink to="/" exact={true} activeClassName="active">
-            Home
+            MovieTracker
+          </NavLink>
+          <NavLink to="/mylist" exact={true} activeClassName="active">
+            My List
           </NavLink>
           </IconButton>
           {/* <Typography className={classes.title} variant="h6" noWrap>
@@ -255,8 +258,7 @@ export default function NavBar({ setAuthenticated }) {
       {renderMobileMenu}
       {renderMenu}
     </div>
-    </ul>
-    </nav>
+  
   );
 }
 // const NavBar = ({ setAuthenticated }) => {

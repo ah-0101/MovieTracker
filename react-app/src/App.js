@@ -50,7 +50,6 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true}>
-          <h1>My Home Page Movies</h1>
           <Movie />
         </ProtectedRoute>
       </Switch>

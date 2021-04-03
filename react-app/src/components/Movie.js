@@ -68,8 +68,20 @@ const Movie = () => {
 
     return (
         <>
+        <div className="height-page">
+        
       <header className="home-land">
-       
+      <div className='player-wrapper'>
+        <ReactPlayer
+          url='https://vimeo.com/20914353'
+          loop
+          controls={false}
+          className='react-player'
+          playing
+          width='100%'
+          height='100%'
+        />
+      </div>
 
 
           <div className="action-movie-title">ٍAction Movies</div>
@@ -95,11 +107,11 @@ const Movie = () => {
         ))}
         </div>
 
-        <div className='black-bottom'>
           <div className="comedies-movie-title">ٍComedies</div>
+        {/* <div className='black-bottom'> */}
           <div className="comedies-movie-div">
           {movies?.map(movie =>(
-          <>
+            <>
           <div> {movie.category_id === 3 && <ReactPlayer width='300px' height='220' url={movie.movie_url}/>} </div>
           
           </>
@@ -145,9 +157,10 @@ const Movie = () => {
         ))}
         </div>
         </div>
-        </div>
+        {/* </div> */}
         </header>
 
+        </div>
 
 
 
