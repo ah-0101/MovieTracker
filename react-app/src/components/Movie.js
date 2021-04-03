@@ -90,7 +90,7 @@ const Movie = () => {
           {movies?.map(movie =>(
             <>
           {
-            <div> {movie.category_id === 1 && <ReactPlayer  width='300px' height='220' url={movie.movie_url} />}</div> 
+            <div id={movie.id}> {movie.category_id === 1 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' />}</div> 
           }
           </>
         ))}
@@ -101,7 +101,7 @@ const Movie = () => {
           <div className="horror-movie-div">
           {movies?.map(movie =>(
             <>
-          <div> {movie.category_id === 2 && <ReactPlayer width='300px' height='220' url={movie.movie_url}/> }  </div>
+          <div> {movie.category_id === 2 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' /> }  </div>
           
           </>
         ))}
@@ -112,7 +112,7 @@ const Movie = () => {
           <div className="comedies-movie-div">
           {movies?.map(movie =>(
             <>
-          <div> {movie.category_id === 3 && <ReactPlayer width='300px' height='220' url={movie.movie_url}/>} </div>
+          <div> {movie.category_id === 3 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
           
           </>
         ))}
@@ -124,7 +124,7 @@ const Movie = () => {
           <div className="kids-movie-div">
           {movies?.map(movie =>(
             <>
-          <div> {movie.category_id === 4 && <ReactPlayer width='300px' height='220' url={movie.movie_url}/>} </div>
+          <div> {movie.category_id === 4 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
           
           </>
         ))}
@@ -137,7 +137,7 @@ const Movie = () => {
           <div className="tv-movie-div">
           {movies?.map(movie =>(
             <>
-          <div>{movie.category_id === 5 && <ReactPlayer width='300px' height='220' url={movie.movie_url}/>} </div>
+          <div>{movie.category_id === 5 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
           
           </>
         ))}
@@ -150,7 +150,7 @@ const Movie = () => {
           <div className="thriller-movie-div">
           {movies?.map(movie =>(
             <>
-          <div> {movie.category_id === 6 && <ReactPlayer width='300px' height='220' url={movie.movie_url}/>} </div>
+          <div> {movie.category_id === 6 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
           
           
           </>
