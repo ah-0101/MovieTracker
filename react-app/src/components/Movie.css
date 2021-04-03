@@ -2,12 +2,17 @@
     display: flex;
 }
 
+.height-page {
+    height: 300vh;
+    background-color: rgba(15, 15, 15, 0.993);
+}
+
 .home-land {
     width: 1700px;
     height: 900px;
     background-position: center center;
     background-size: cover;
-    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F07%2F1080p-Movie-Backgrounds.jpg&f=1&nofb=1");
+    background-image: url("");
     z-index: -1;
 }
 
@@ -15,25 +20,29 @@
     display: flex;
     position: absolute;
     left: 5%;
-    background-color: black;
-    border: 1rem solid;
+    /* background-color: rgba(14, 13, 13, 0.993); */
+    /* border: 2rem solid inherit; */
     top: 800px;
 }
 
 .action-movie-title {
     color: rgb(248, 246, 246);
     position: relative;
-    top: 697px;
+    top: -200px;
     left: 5%;
-    background-color: black;
-    font-size: 22px;
+    background-color: inherit;
+    line-height: 1.15vw;
+    font-size: 1.4vw;
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* font-size: 22px; */
+    width: 1500px;
 }
 
 .horror-movie-div {
     display: flex;
     position: absolute;
     /* background-color: black; */
-    border: 1rem solid;
+    border: 1rem solid rgb(22, 20, 20);
     top: 130%;
     left: 5%;
 }
@@ -41,52 +50,126 @@
 .horror-movie-title {
     color: rgb(247, 247, 247);
     position: relative;
-    top: 900px;
+    top: 15px;
     left: 5%;
-    background-color: black;
-    font-size: 22px;
+    /* background-color: rgba(15, 15, 15, 0.993); */
+    /* font-size: 22px; */
+    width: 1500px;
+    line-height: 1.15vw;
+    font-size: 1.4vw;
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .comedies-movie-div {
     display: flex;
     position: absolute;
     background-color: black;
-    border: 1rem solid;
-    top: 1600px;
+    border: 1rem solid rgb(22, 20, 20);
+    top: 1260px;
+    left: 5%;
+}
+
+.comedies-movie-title {
+    color: rgb(247, 247, 247);
+    position: relative;
+    top: 230px;
+    left: 5%;
+    /* background-color: rgba(15, 15, 15, 0.993); */
+    line-height: 1.15vw;
+    font-size: 1.4vw;
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* font-size: 22px; */
+    width: 1500px;
 }
 
 .kids-movie-div {
     display: flex;
     position: absolute;
     background-color: black;
-    border: 1rem solid;
-    top: 1900px;
+    border: 1rem solid rgb(22, 20, 20);
+    top: 1500px;
+    left: 5%;
+}
+
+.kids-movie-title {
+    color: rgb(247, 247, 247);
+    position: relative;
+    top: 450px;
+    left: 5%;
+    /* background-color: rgba(15, 15, 15, 0.993); */
+    /* font-size: 22px; */
+    line-height: 1.15vw;
+    font-size: 1.4vw;
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    width: 1500px;
 }
 
 .tv-movie-div {
     display: flex;
     position: absolute;
     background-color: black;
-    border: 1rem solid;
-    top: 2000px;
+    border: 1rem solid rgb(22, 20, 20);
+    top: 1740px;
+    left: 5%;
+}
+
+.tv-movie-title {
+    color: rgb(247, 247, 247);
+    position: relative;
+    top: 660px;
+    left: 5%;
+    /* background-color: rgba(15, 15, 15, 0.993); */
+    line-height: 1.15vw;
+    font-size: 1.4vw;
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* font-size: 22px; */
+    width: 1500px;
 }
 
 .thriller-movie-div {
     display: flex;
     position: absolute;
     background-color: black;
-    border: 1rem solid;
-    top: 2200px;
+    border: 1rem solid rgb(22, 20, 20);
+    top: 2000px;
+    left: 5%;
 }
 
-.black-bottom {
+.thriller-movie-title {
+    color: rgb(247, 247, 247);
+    position: relative;
+    top: 910px;
+    left: 5%;
+    /* background-color: rgba(15, 15, 15, 0.993); */
+    line-height: 1.15vw;
+    font-size: 1.4vw;
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* font-size: 22px; */
+    width: 1500px;
+}
+
+.player-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+    z-index: 0;
+    /* 720 / 1280 = 0.5625 */
+}
+
+.react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* .black-bottom {
     position: relative;
     top: 800px;
     background-color: black;
     width: 1700px;
     height: 3000px;
     z-index: -2;
-}
+} */
 
 
 /* .grid-container {
