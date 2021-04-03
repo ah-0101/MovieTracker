@@ -4,8 +4,29 @@ import {useEffect, useState} from "react"
 import {loadMovie} from "../store/movies"
 import {addCategory} from "../store/category"
 import ReactPlayer from 'react-player'
-import { Player } from 'video-react';
+import { Player,ControlBar  } from 'video-react';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Radio from '@material-ui/core/Radio';
+import Paper from '@material-ui/core/Paper';
 import './Movie.css'
+// import videos from '../videos';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    height: 140,
+    width: 100,
+  },
+  control: {
+    padding: theme.spacing(2),
+  },
+}));
+
 const Movie = () => {
     
     const dispatch = useDispatch()
@@ -15,11 +36,23 @@ const Movie = () => {
     const categories = Object.values(categoriesState)
     const movies = Object.values(stateMovie)
     const [play,setPlay] = useState(false)
-    
+    const [spacing, setSpacing] = React.useState(2);
+    const classes = useStyles();
+
+    const handleChange = (event) => {
+      setSpacing(Number(event.target.value));
+    };
+  
     // console.log("movie >>>",movies)
     // console.log("user >>>>>>>",user)
     // console.log("user >>>>>>>",category)
     
+    movies.map(movie => {
+      if(movie.category_id === 1){
+        console.log(movie)
+      }
+    })
+
     useEffect(()=> {
             dispatch(loadMovie());
             dispatch(addCategory());
@@ -35,23 +68,112 @@ const Movie = () => {
 
     return (
         <>
-        <div className='outer-category'>
-        {categories?.map(category => (
-          <div>
-          <h1>{category.name}</h1>
-          </div>
-          ))}
-          </div>
-          <div  className='outer-movie'>
-        {movies?.map(movie =>(
-          <>
-          {/* <h1 className='inner-movie'>{movie.category_id == 1?movie.movie_url: null}</h1> */}
-          <ReactPlayer width='750px' height='500px'
-        playIcon  url={movie.category_id === 1? movie.movie_url: null} />          
+      <header className="home-land">
        
+
+
+          <div className="action-movie-title">ٍAction Movies</div>
+          {/* <div className="grid-container"> */}
+          <div className="action-movie-div-1">
+          {movies?.map(movie =>(
+            <>
+          {
+            <div> {movie.category_id === 1 && <ReactPlayer  width='300px' height='220' url={movie.movie_url} />}</div> 
+          }
           </>
         ))}
         </div>
+        <div>
+
+          <div className="horror-movie-title"> Horror Movies</div>
+          <div className="horror-movie-div">
+          {movies?.map(movie =>(
+            <>
+          <div> {movie.category_id === 2 && <ReactPlayer width='300px' height='220' url={movie.movie_url}/> }  </div>
+          
+          </>
+        ))}
+        </div>
+
+        <div className='black-bottom'>
+          <div className="comedies-movie-title">ٍComedies</div>
+          <div className="comedies-movie-div">
+          {movies?.map(movie =>(
+          <>
+          <div> {movie.category_id === 3 && <ReactPlayer width='300px' height='220' url={movie.movie_url}/>} </div>
+          
+          </>
+        ))}
+        </div>
+        </div>
+
+        <div>
+          <div className="kids-movie-title">ٍKids' Movies</div>
+          <div className="kids-movie-div">
+          {movies?.map(movie =>(
+            <>
+          <div> {movie.category_id === 4 && <ReactPlayer width='300px' height='220' url={movie.movie_url}/>} </div>
+          
+          </>
+        ))}
+
+        </div>
+        </div>
+
+        <div>
+          <div className="tv-movie-title">ٍSeries And Tv Shows</div>
+          <div className="tv-movie-div">
+          {movies?.map(movie =>(
+            <>
+          <div>{movie.category_id === 5 && <ReactPlayer width='300px' height='220' url={movie.movie_url}/>} </div>
+          
+          </>
+        ))}
+        
+        </div>
+        </div>
+
+        <div>
+          <div className="thriller-movie-title">ٍThriller Movies</div>
+          <div className="thriller-movie-div">
+          {movies?.map(movie =>(
+            <>
+          <div> {movie.category_id === 6 && <ReactPlayer width='300px' height='220' url={movie.movie_url}/>} </div>
+          
+          
+          </>
+        ))}
+        </div>
+        </div>
+        </div>
+        </header>
+
+
+
+
+
+
+
+
+        {/* <div className='outer-category'>
+        {categories?.map(category => (
+          <div>
+          <h1>{category.id === 1? 1: ''}</h1>
+          </div>
+          ))}
+          </div> */}
+          {/* <div  className='outer-movie'>
+        
+        {movies?.map(movie =>(
+          <>
+          <div> {movie.category_id === 1? movie.movie_name: ''} </div>
+          
+          </>
+        ))}
+        </div> */}
+        {/* <h1 className='inner-movie'>{movie.category_id == 1?movie.movie_url: null}</h1> */}
+        {/* <ReactPlayer width='750px' height='500px'
+      playIcon  url={movie.category_id === 1? movie.movie_url: null} />           */}
         {/* <video autoplay loop controls >
         <source src={`../videos/${movie.movie_url}`} type="video/mp4"/>
       </video> */}

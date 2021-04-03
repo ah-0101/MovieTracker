@@ -1,3 +1,108 @@
+.action-movie-div {
+    display: flex;
+}
+
+.home-land {
+    width: 1700px;
+    height: 900px;
+    background-position: center center;
+    background-size: cover;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F07%2F1080p-Movie-Backgrounds.jpg&f=1&nofb=1");
+    z-index: -1;
+}
+
+.action-movie-div-1 {
+    display: flex;
+    position: absolute;
+    left: 5%;
+    background-color: black;
+    border: 1rem solid;
+    top: 800px;
+}
+
+.action-movie-title {
+    color: rgb(248, 246, 246);
+    position: relative;
+    top: 697px;
+    left: 5%;
+    background-color: black;
+    font-size: 22px;
+}
+
+.horror-movie-div {
+    display: flex;
+    position: absolute;
+    /* background-color: black; */
+    border: 1rem solid;
+    top: 130%;
+    left: 5%;
+}
+
+.horror-movie-title {
+    color: rgb(247, 247, 247);
+    position: relative;
+    top: 900px;
+    left: 5%;
+    background-color: black;
+    font-size: 22px;
+}
+
+.comedies-movie-div {
+    display: flex;
+    position: absolute;
+    background-color: black;
+    border: 1rem solid;
+    top: 1600px;
+}
+
+.kids-movie-div {
+    display: flex;
+    position: absolute;
+    background-color: black;
+    border: 1rem solid;
+    top: 1900px;
+}
+
+.tv-movie-div {
+    display: flex;
+    position: absolute;
+    background-color: black;
+    border: 1rem solid;
+    top: 2000px;
+}
+
+.thriller-movie-div {
+    display: flex;
+    position: absolute;
+    background-color: black;
+    border: 1rem solid;
+    top: 2200px;
+}
+
+.black-bottom {
+    position: relative;
+    top: 800px;
+    background-color: black;
+    width: 1700px;
+    height: 3000px;
+    z-index: -2;
+}
+
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 2px;
+    padding: 10px;
+}
+
+.grid-container>div {
+    border: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+} */
+
+
 /* .outer-category {
     /* background-color: yellow; */
 
