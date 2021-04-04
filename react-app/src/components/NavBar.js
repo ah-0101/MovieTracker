@@ -204,7 +204,7 @@ export default function NavBar({ setAuthenticated }) {
             <InputBase
               placeholder="Search…"
               classes={{
-                root: classes.inputRoot,
+                root1: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
