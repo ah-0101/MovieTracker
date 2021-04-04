@@ -12,7 +12,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
-import {Redirect, useHistory} from 'react-router-dom';
+import {Redirect, useHistory,NavLink} from 'react-router-dom';
 import MovieInfoModal from './MovieInfoModal.jsx'
 import MovieInfo from './MovieInfo'
 import { Modal } from '../context/Modal';
@@ -109,13 +109,23 @@ console.log('movie id is here ',movieId)
           {movies?.map(movie =>(
             <>
           {
-            <div> {movie.category_id === 1 && <img  id={movie.id} onClick={() => setShowModal(true)} width='300px' height='220' src={movie.movie_url} alt='nothing' />}</div> 
+            // <>
+            // {movie.category_id === 1 &&
+            // <button id={movie.id} onClick={() => setShowModal(true)}>
+            // info
+            // </button>}
+            <div > { movie.category_id === 1 && <img  id={movie.id}  width='300px' height='220' src={movie.movie_url} alt='nothing' />}
+            {movie.category_id === 1 &&
+              <NavLink to={`/${ movie.id}`}>movie info</NavLink>}
+            </div> 
+            // </>
             
-          }  {showModal && (
+          } 
+           {/* {showModal && (
             <Modal onClose={() => setShowModal(false)}>
               <MovieInfo movieId={movieId}/>
             </Modal>
-          )}
+          )} */}
           </>
         ))}
         </div>
@@ -125,7 +135,8 @@ console.log('movie id is here ',movieId)
           <div className="horror-movie-div">
           {movies?.map(movie =>(
             <>
-          <div> {movie.category_id === 2 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' /> }  </div>
+          <div> 
+            {movie.category_id === 2 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' /> }  </div>
           
           </>
         ))}
