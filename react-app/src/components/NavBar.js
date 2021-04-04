@@ -22,7 +22,9 @@ import LoginFormModal from './auth/LoginFormModal'
 import SignupFormModal from './auth/SignupFormModal'
 const useStyles = makeStyles((theme) => ({
   nav:{
-    background: 'black'
+    background: 'inherit',
+    borderStyle: "hidden"
+
   },
   grow: {
     flexGrow: 1,
@@ -61,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   inputRoot: {
-    color: 'inherit',
+    // color: 'inherit',
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
@@ -146,41 +148,15 @@ export default function NavBar({ setAuthenticated }) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
+
     </Menu>
   );
   
   return (
  
     <div className={classes.grow}>
-      <AppBar className={classes.nav} >
-        <Toolbar>
+      
+        <Toolbar style={{color:"red", borderStyle:"hidden", width:"95%", backgroundColor:"None", height:"px"}}>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -197,7 +173,7 @@ export default function NavBar({ setAuthenticated }) {
           {/* <Typography className={classes.title} variant="h6" noWrap>
             Material-UI
           </Typography> */}
-          <div className={classes.search}>
+        { user &&  <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -209,7 +185,7 @@ export default function NavBar({ setAuthenticated }) {
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
-          </div>
+          </div>}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
           {!user &&
@@ -254,7 +230,6 @@ export default function NavBar({ setAuthenticated }) {
             </IconButton>
           </div>
         </Toolbar>
-      </AppBar>
       {renderMobileMenu}
       {renderMenu}
     </div>

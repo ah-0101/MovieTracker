@@ -13,3 +13,37 @@
     border-radius: 4px;
     position: relative
 }  */
+
+.login-form {
+    width: 550px;
+    height: 600px;
+    background-color: hsl(0, 0%, 100%);
+    position: relative;
+    top: 10%;
+}
+
+.login-form input {
+    width: 400px;
+    height: 70px;
+    display: flex;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(232, 240, 254) !important;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.login-form button {
+    width: 408px;
+    height: 70px;
+    position: relative;
+    top: 30px;
+    left: 70px;
+    background-color: rgb(99, 155, 204);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+}

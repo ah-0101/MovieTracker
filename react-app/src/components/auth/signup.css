@@ -1,0 +1,56 @@
+.outer-signup-modal {
+    width: 550px;
+    height: 600px;
+    background-color: rgb(255, 253, 253);
+    /* -webkit-filter: blur(3px); */
+    /* -moz-filter: blur(3px); */
+    /* -o-filter: blur(3px); */
+    /* -ms-filter: blur(3px); */
+    /* filter: blur(3px); */
+    /* position: fixed; */
+}
+
+.outer-signup-modal input {
+    width: 400px;
+    height: 70px;
+    display: flex;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(232, 240, 254) !important;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    /* color: -internal-light-dark(black, white) !important; */
+}
+
+.btn button {
+    width: 408px;
+    height: 70px;
+    position: relative;
+    top: 30px;
+    left: 70px;
+    background-color: rgb(99, 155, 204);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+}
+
+::placeholder {
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.size {
+    position: relative;
+    top: 10%;
+}
+
+.signin-tag {
+    color: rgb(99, 155, 204);
+    position: relative;
+    top: -15px;
+    left: 13%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}

@@ -48,45 +48,54 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
-        <label>User Name</label>
+    <form className='outer-signup-modal' onSubmit={onSignUp}>
+      <div className='size'>
+
+     
+      <h1 className='signin-tag'>Sign Up</h1>
+      <div >
         <input
           type="text"
           name="username"
           onChange={updateUsername}
           value={username}
+          placeholder="User Name"
         ></input>
       </div>
       <div>
-        <label>Email</label>
         <input
           type="text"
           name="email"
           onChange={updateEmail}
           value={email}
+          placeholder="Email"
         ></input>
       </div>
       <div>
-        <label>Password</label>
+       
         <input
           type="password"
           name="password"
           onChange={updatePassword}
           value={password}
+          placeholder="Password"
         ></input>
       </div>
       <div>
-        <label>Repeat Password</label>
         <input
           type="password"
           name="repeat_password"
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
+          placeholder="Confirm Password"
         ></input>
       </div>
+
+      <div className="btn">
       <button type="submit">Sign Up</button>
+      </div>
+      </div>
     </form>
 
   );

@@ -1,11 +1,30 @@
 import React from 'react';
+import ReactPlayer from 'react-player'
 import './LoginPage.css'
 
 
 export default function LoginPage() {
 
     return (
-        <div className="outer-outer">
+        <>
+    {/* <div id="overlay">
+
+        <img src="loading.gif" alt="Be patient..." />
+        
+    </div> */}
+
+
+
+
+
+
+
+
+
+        {/* <div className="outer-outer"> */}
+            {/* <div className='player-wrapper'> */}
+       
+      {/* </div>
             <div className="outer-text">
                 <div>
 
@@ -20,11 +39,13 @@ export default function LoginPage() {
             </div>
 
             <div  className="img">
-            </div>
+            </div> */}
 
             {/* <h1 className="h12">Unlimited movies, TV shows, and more.</h1>
             <h1 className="h12">Unlimited movies, TV shows, and more.</h1> */}
 
-        </div>
+        {/* </div> */}
+        {/* </div> */}
+        </>
     )
 }

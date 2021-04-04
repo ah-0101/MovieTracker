@@ -20,7 +20,9 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     const user = await dispatch(loginUser(email, password))
         history.push('/')
   };
-
+  const handleDemoLogin = () => {
+    dispatch(loginUser({ email: "demo@aa.io", password: "password" }));
+  }
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -28,19 +30,21 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   const updatePassword = (e) => {
     setPassword(e.target.value);
   };
-  
+  console.log(loginUser({ email: "demo@aa.io", password: "password" }))
   return (
     <>
     <div >
 
     <form onSubmit={onLogin} className="login-form" >
+    <div className='size'>
+    <h1 className='signin-tag'>Log In</h1>
       <div>
         {errors.map((error) => (
           <div>{error}</div>
           ))}
       </div>
       <div>
-        <label htmlFor="email">Email</label>
+       
         <input
         className="email-input"
           name="email"
@@ -51,7 +55,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           />
       </div>
       <div>
-        <label htmlFor="password">Password</label>
+    
         <input
           name="password"
           type="password"
@@ -60,7 +64,10 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           onChange={updatePassword}
           />
         <button type="submit">Login</button>
+        <button className="demo-login" type="button" onClick={handleDemoLogin}>Demo Log In</button>
       </div>
+      </div>
+
     </form>
           </div>
     </>

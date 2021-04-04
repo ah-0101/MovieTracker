@@ -11,7 +11,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url('./Screen-Ads.jpg');
+        /* background-image: url('./Screen-Ads.jpg'); */
         background-size: cover;
         -webkit-filter: blur(3px);
         -moz-filter: blur(3px);
