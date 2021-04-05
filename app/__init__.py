@@ -13,6 +13,7 @@ from .api.category_routes import category_routes
 from .api.reviews_routes import reviews_routes
 from .api.favorite_routes import favorite_routes
 
+
 from .seeds import seed_commands
 
 from .config import Config

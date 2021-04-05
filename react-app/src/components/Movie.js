@@ -12,6 +12,12 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
+import {Redirect, useHistory,NavLink} from 'react-router-dom';
+import MovieInfoModal from './MovieInfoModal.jsx'
+import MovieInfo from './MovieInfo'
+import { Modal } from '../context/Modal';
+
+
 import './Movie.css'
 // import videos from '../videos';
 const useStyles = makeStyles((theme) => ({
@@ -35,10 +41,14 @@ const Movie = () => {
     const categoriesState = useSelector(state => state.categories)
     const categories = Object.values(categoriesState)
     const movies = Object.values(stateMovie)
-    const [play,setPlay] = useState(false)
+    // const [play,setPlay] = useState(false)
     const [spacing, setSpacing] = React.useState(2);
+    const [movieId, setMovieId] = useState(0) 
+    const [MovieInfoState, setMovieInfoState] = useState() 
+    const [showModal, setShowModal] = useState(false);
+    
     const classes = useStyles();
-
+    const history = useHistory()
     const handleChange = (event) => {
       setSpacing(Number(event.target.value));
     };
@@ -66,6 +76,14 @@ const Movie = () => {
   
 // };
 
+    const handleClickMovie = (e) => {
+      // e.preventDefault();
+      setMovieId(e.target.id)
+      // setMovieInfoState(<MovieInfoModal movieId={movieId}/>)
+      // return MovieInfoState
+      // history.push('/movie-info')
+    }
+console.log('movie id is here ',movieId)
     return (
         <>
         <div className="height-page">
@@ -75,6 +93,7 @@ const Movie = () => {
         <ReactPlayer
           url='https://vimeo.com/20914353'
           loop
+          muted
           controls={false}
           className='react-player'
           playing
@@ -83,15 +102,30 @@ const Movie = () => {
         />
       </div>
 
-
+      
           <div className="action-movie-title">ٍAction Movies</div>
           {/* <div className="grid-container"> */}
           <div className="action-movie-div-1">
           {movies?.map(movie =>(
             <>
           {
-            <div id={movie.id}> {movie.category_id === 1 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' />}</div> 
-          }
+            // <>
+            // {movie.category_id === 1 &&
+            // <button id={movie.id} onClick={() => setShowModal(true)}>
+            // info
+            // </button>}
+            <div > { movie.category_id === 1 && <img  id={movie.id}  width='300px' height='220' src={movie.movie_url} alt='nothing' />}
+            {movie.category_id === 1 &&
+              <NavLink to={`/${ movie.id}`}>movie info</NavLink>}
+            </div> 
+            // </>
+            
+          } 
+           {/* {showModal && (
+            <Modal onClose={() => setShowModal(false)}>
+              <MovieInfo movieId={movieId}/>
+            </Modal>
+          )} */}
           </>
         ))}
         </div>
@@ -101,7 +135,8 @@ const Movie = () => {
           <div className="horror-movie-div">
           {movies?.map(movie =>(
             <>
-          <div> {movie.category_id === 2 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' /> }  </div>
+          <div> 
+            {movie.category_id === 2 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' /> }  </div>
           
           </>
         ))}
@@ -112,7 +147,7 @@ const Movie = () => {
           <div className="comedies-movie-div">
           {movies?.map(movie =>(
             <>
-          <div> {movie.category_id === 3 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
+          <div> {movie.category_id === 3 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
           
           </>
         ))}
@@ -124,7 +159,7 @@ const Movie = () => {
           <div className="kids-movie-div">
           {movies?.map(movie =>(
             <>
-          <div> {movie.category_id === 4 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
+          <div> {movie.category_id === 4 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
           
           </>
         ))}
@@ -137,7 +172,7 @@ const Movie = () => {
           <div className="tv-movie-div">
           {movies?.map(movie =>(
             <>
-          <div>{movie.category_id === 5 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
+          <div>{movie.category_id === 5 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
           
           </>
         ))}
@@ -150,7 +185,7 @@ const Movie = () => {
           <div className="thriller-movie-div">
           {movies?.map(movie =>(
             <>
-          <div> {movie.category_id === 6 && <img  width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
+          <div> {movie.category_id === 6 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
           
           
           </>
@@ -161,10 +196,9 @@ const Movie = () => {
         </header>
 
         </div>
+        
 
-
-
-
+         
 
 
 
