@@ -4,43 +4,46 @@ import {useState} from 'react'
 import './LoginPage.css'
 import movietrackerLogo from "./movietrackerLogo.png"
 import SearchBar from './SearchBar'
+import iconSearch from './iconSearch.jpg'
 export default function LoginPage() {
     const [classHandler, setClassHandler] = useState("search-icon")
     const [classHandler2, setClassHandler2] = useState("search-ind-none")
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState([])
+    const [value, setValue] = useState([])
     
 
-
     const handleSearchType = async (e) => {
-        const keyword = e.target.value
+        let keyword = e.target.value
+        setValue(keyword)
+        // setClearValue(keyword)
         if (keyword === '') {
-            setClassHandler('search-icon')
-            setClassHandler2('search-ind-none')
             return
-        }else{
-            setClassHandler('search-icon-none')
-            setClassHandler2('')
+        //     setClassHandler('search-icon')
+        //     setClassHandler2('search-ind-none')
+        //     return
         }
+        //     setClassHandler('search-icon-none')
+        //     setClassHandler2('')
+        
         const movieSearch = await fetch(`/api/movies/${keyword}`);
         let jsonMovie = await movieSearch.json();
 
-            setSearch((prev) => prev =  jsonMovie)
+            setSearch(jsonMovie)
         console.log(search)
+        console.log(e.target.value)
         // search.map(map => console.log(map))
     }
 
     
-
+    const handleCancelInput = (e) => {
+        e.preventDefault()
+        setValue('')
+        // console.log('keyword value ???>>>', e.target.value)
+    }
 
 
     return (
         <>
-    {/* <div id="overlay">
-
-        <img src="loading.gif" alt="Be patient..." />
-        
-    </div> */}
-
 
 
 
@@ -48,12 +51,23 @@ export default function LoginPage() {
 
                 <img className='logo' src={movietrackerLogo} alt=""/>
                 </div>
-
-                <div class="main">
-                <input className='search-input' onChange={handleSearchType}  type="text" />
+                <div className='search-box'>
+                <div className="search-field">
+                    <span ><img className='search-icon' src={iconSearch} alt="not working"/></span>
                     </div>
+                 
+                    <div>
+                <input className='search-input' onChange={handleSearchType} value={value} type="text" />
+                    </div>
+                    <div>
+                        {value.length ?
 
-
+                            <span onClick={handleCancelInput} className="cancel-search">
+                            X
+                        </span> : null
+                        }
+                    </div>
+                </div>
                     <div>
 
                         {/* { search?.map(movie => (
