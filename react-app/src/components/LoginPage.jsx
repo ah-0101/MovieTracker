@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
+import {Redirect,useHistory} from 'react-router-dom'
 import {useState} from 'react'
 import './LoginPage.css'
 import movietrackerLogo from "./movietrackerLogo.png"
@@ -10,11 +11,14 @@ export default function LoginPage() {
     const [classHandler2, setClassHandler2] = useState("search-ind-none")
     const [search, setSearch] = useState([])
     const [value, setValue] = useState([])
+    const [movId, setMovId] = useState(0)
+    const history = useHistory()
     
 
     const handleSearchType = async (e) => {
         let keyword = e.target.value
         setValue(keyword)
+        console.log('sssssssssss',value)
         // setClearValue(keyword)
         if (keyword === '') {
             return
@@ -29,8 +33,8 @@ export default function LoginPage() {
         let jsonMovie = await movieSearch.json();
 
             setSearch(jsonMovie)
-        console.log(search)
-        console.log(e.target.value)
+        // console.log(search)
+        // console.log(e.target.value)
         // search.map(map => console.log(map))
     }
 
@@ -38,10 +42,17 @@ export default function LoginPage() {
     const handleCancelInput = (e) => {
         e.preventDefault()
         setValue('')
-        // console.log('keyword value ???>>>', e.target.value)
     }
+    // history.push(`/${movId}`)
 
-
+    const handleNavigate = async (e) => {
+        e.preventDefault()
+         setMovId(e.target.id)
+    }
+        
+        if(movId !== 0){
+            return <Redirect to={`/${movId}`}/>
+        }
     return (
         <>
 
@@ -51,6 +62,9 @@ export default function LoginPage() {
 
                 <img className='logo' src={movietrackerLogo} alt=""/>
                 </div>
+                <div>
+
+
                 <div className='search-box'>
                 <div className="search-field">
                     <span ><img className='search-icon' src={iconSearch} alt="not working"/></span>
@@ -70,9 +84,47 @@ export default function LoginPage() {
                 </div>
                     <div>
 
+                    {value.length ? 
+                    
+                        <div className="outer-main-list">
+                            <div>
+
+                            </div>
+                            <ul>
+                                <ul>
+                                    
+                                    <div className="inner-result-field">
+
+                                    { search?.map(movie => (
+                                        <>
+                                        <div className="inner-search-icon">
+                                            {/* pic goes here  */}
+                                        </div>
+                                            <div className="inner-search">
+                                                <div className="inner-search-result">
+                                            <span>
+                                         <b id={movie.id} key={movie.id}  onClick={handleNavigate}>{movie.movie_name}</b>
+                                            </span>
+                                                </div>
+                                        </div>
+                                        </>
+                                     ))}
+
+                                    </div>
+                                
+                                </ul>
+                            </ul>
+                        </div>
+
+                    : null
+                    
+                    
+                    
+                    }
                         {/* { search?.map(movie => (
                             <h1>{movie.id}</h1>
                         ))} */}
+                    </div>
                     </div>
                     {/* <div className='classRender'>
                     {
@@ -90,7 +142,7 @@ export default function LoginPage() {
                 </div> */}
 
 
-                    <div className='footer'></div>
+                    <div className='footer' > <a href='https://github.com/Ace-0101/MovieTracker/'> Github Repo</a></div>
 
         {/* <div className="outer-outer"> */}
             {/* <div className='player-wrapper'> */}

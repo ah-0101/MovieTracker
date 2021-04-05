@@ -3,13 +3,22 @@ from app.models import Movie
 
 movie_routes = Blueprint('movies', __name__)
 
-@movie_routes.route('/')
-def movies():
-    movies = Movie.query.all()
-    return {"movies": [movie.to_dict() for movie in movies ]}
-
+@movie_routes.route('/<int:id>')
+def movies(id):
+    movies = Movie.query.get(id)
+    return movies.to_dict()
+# {"movies": [movie.to_dict() for movie in movies ]}
+#  user = User.query.get(id)
+#     return user.to_dict()
 
 @movie_routes.route('/<id>')
 def getMovieInfo(id):
-    search_for_movie = Movie.query.filter(Movie.movie_name.ilike(f'%{id}%')).all()
+    search_for_movie = Movie.query.filter(Movie.movie_name.ilike(f'%{id}%')).limit(7)
     return jsonify([movie.to_dict() for movie in search_for_movie])
+
+# @movie_routes.route('/movie/<int:id>')
+# def getMovieInfo(id):
+#     search_for_movie = Movie.query.filter(Movie.id.like(id)).all()
+#     return jsonify([movie.to_dict() for movie in search_for_movie])
+
+

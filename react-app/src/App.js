@@ -11,6 +11,8 @@ import { authenticate } from "./services/auth";
 import {useDispatch, useSelector} from 'react-redux';
 import { restoreUser } from "./store/session";
 import LoginPage from './components/LoginPage';
+import MoviePage from './components/MoviePage';
+
 
 function App() {
   const dispatch = useDispatch()
@@ -37,7 +39,7 @@ function App() {
     <BrowserRouter>
       <NavBar setAuthenticated={setAuthenticated} />
       <Switch>
-        <Route path="/login" exact={true}>
+        <Route path="/" exact={true}>
          <LoginPage/>
         </Route>
         <Route path="/sign-up" exact={true}>
@@ -49,9 +51,12 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true}>
+        <Route path="/" exact={true}>
           <Movie />
-        </ProtectedRoute>
+        </Route>
+        <Route path="/:movieId" exact={true}>
+          <MoviePage />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
