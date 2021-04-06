@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import './MoviePage.css'
-
+import movietrackerred from './movietrackerred.png'
 export default function MoviePage(){
     const id = useParams()
     const [movie, setMovie] = useState([])
@@ -21,19 +21,52 @@ export default function MoviePage(){
         console.log(movie)
     return (
         <>
+        <div className="movie-logo-holder">
+            <img src={movietrackerred} alt=""/>
+        </div>
         <section>
 
         <div className="background-layout">
+
+            
+            <div className="container24">
             <div className="image-custom">
                 <img src={movie.movie_url} alt="s"/>
             </div>
-        <h1>{movie.id}</h1>
-        <br/>
-        <h1>{movie.movie_name}</h1>
-        <br/>
-        <h1>{movie.actors}</h1>
-        </div>
+            <div>
+                    
+
+                <div className="actor-movie_names">
+            <p className='movie-name'>&nbsp;&nbsp;&nbsp;{movie.movie_name}</p>
+            <p className='actor-name' >&nbsp;&nbsp;&nbsp;Actors: {movie.actors}</p>
+                </div>
+          
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{movie.movie_date}</p>
+            <div>
+               <button className='btn-list'>&nbsp;&nbsp;&nbsp;Add to Watchlist</button>
+            </div>
+            <div>
+                <button className='btn-rate'>&nbsp;&nbsp;&nbsp;Rate This Movie</button>
+            </div>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⭐⭐⭐⭐⭐</p>
+            </div>
+            </div>
+            <ul className='p-tag'>
+
+            <div className='info-breaker-line'>
+            </div>
+            <div className='info'>
+                <ul>
+                    <p>Brief movie biography</p>
+            <p className='movie-info'>{movie.movie_info}</p>
+                </ul>
+            </div>
+            </ul>
+            
+            </div>
+       
         </section>
+
         </>
     )
 }
