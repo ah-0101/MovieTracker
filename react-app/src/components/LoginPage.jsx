@@ -62,6 +62,8 @@ export default function LoginPage() {
 
                 <img className='logo' src={movietrackerLogo} alt=""/>
                 </div>
+                <div className='holder'>
+
                 <div>
 
 
@@ -76,17 +78,17 @@ export default function LoginPage() {
                     <div>
                         {value.length ?
 
-                            <span onClick={handleCancelInput} className="cancel-search">
+                        <span onClick={handleCancelInput} className="cancel-search">
                             X
                         </span> : null
                         }
                     </div>
-                </div>
+          
                     <div>
 
                     {value.length ? 
                     
-                        <div className="outer-main-list">
+                    <div className="outer-main-list">
                             <div>
 
                             </div>
@@ -97,6 +99,8 @@ export default function LoginPage() {
 
                                     { search?.map(movie => (
                                         <>
+                                        <ul className="inner-ul">
+
                                         <div className="inner-search-icon">
                                             {/* pic goes here  */}
                                         </div>
@@ -107,6 +111,7 @@ export default function LoginPage() {
                                             </span>
                                                 </div>
                                         </div>
+                                        </ul>
                                         </>
                                      ))}
 
@@ -115,16 +120,19 @@ export default function LoginPage() {
                                 </ul>
                             </ul>
                         </div>
+                        
 
-                    : null
-                    
-                    
-                    
-                    }
+: null
+
+
+
+}
+</div>
                         {/* { search?.map(movie => (
                             <h1>{movie.id}</h1>
                         ))} */}
                     </div>
+                        </div>
                     </div>
                     {/* <div className='classRender'>
                     {
