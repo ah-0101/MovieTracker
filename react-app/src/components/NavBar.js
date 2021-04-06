@@ -162,16 +162,21 @@ import SignupFormModal from './auth/SignupFormModal'
             Home
           </NavLink>
         </li>
-        <li style={{float:"right"}}>
-          <NavLink   to="/login" exact={true} activeClassName="active">
+        {!user && 
+        <div className='btn-padding'>
+
+        <li style={{float:"right"}} className="signin-btn">
             <LoginFormModal/>
-          </NavLink>
         </li>
-        <li style={{float:"right"}}>
-          <NavLink  to="/sign-up" exact={true} activeClassName="active">
+        </div>}
+        {!user &&
+        <div className='btn-padding_signup'>
+        <li style={{float:"right"}} className="signup-btn">
            <SignupFormModal/>
-          </NavLink>
+
         </li>
+                  </div>
+       }
         {/* <li>
           <NavLink to="/users" exact={true} activeClassName="active">
             Users
@@ -179,8 +184,12 @@ import SignupFormModal from './auth/SignupFormModal'
         </li> */}
         {user &&
         <li style={{float:"right"}}>
+          {/* <li className='fake-profile'>
+         
+          </li> */}
           <LogoutButton  setAuthenticated={setAuthenticated} />
-        </li>}
+        </li>
+        }
       </ul>
     </nav>
   );

@@ -32,7 +32,7 @@
     background-color: rgb(232, 240, 254) !important;
     font-size: 20px;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .login-form button {
@@ -41,9 +41,19 @@
     position: relative;
     top: 30px;
     left: 70px;
-    background-color: rgb(99, 155, 204);
+    background: #1a73e8;
     font-size: 20px;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    letter-spacing: .25px;
+    box-sizing: border-box;
+    margin-top: 0.33%;
+}
+
+.login-form button:hover {
+    background: #6097df;
 }

@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import sessionReducer from "./session"
 import MoviesReducer from "./movies"
 import CategoryReducer from "./category"
+import FavoriteReducer from './favorite'
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     movies: MoviesReducer,
     categories: CategoryReducer,
+    Favorite: FavoriteReducer,
 });
 
 let enhancer;
