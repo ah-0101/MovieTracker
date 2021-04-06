@@ -1,0 +1,36 @@
+.background-layout {
+    margin-top: 2%;
+    border-bottom: 1px solid var(--primaryColor);
+    margin-right: auto;
+    margin-left: auto;
+    background-position: right -2px top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpng.pngtree.com%2Fback_origin_pic%2F02%2F66%2F12%2Fff2d9ed9fbd58a1c4ac1c868d15c430a.jpg&f=1&nofb=1);
+    /* -webkit-filter: blur(3px); */
+    /* -moz-filter: blur(3px); */
+    /* -o-filter: blur(3px); */
+    /* -ms-filter: blur(3px); */
+    /* filter: blur(2px); */
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 100%;
+}
+
+.image-custom>img {
+    min-width: 300px;
+    margin-top: 5%;
+    margin-left: 3%;
+    width: 400px;
+    height: 250px;
+    /* border-radius: 10% / 20%; */
+    filter: initial;
+    /* z-index: -1; */
+}
+
+section {
+    display: flex;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+}
