@@ -3,7 +3,7 @@ import { logout } from "../../services/auth";
 import {logoutUser} from "../../store/session"
 import {logoutMovie} from "../../store/movies"
 import {logoutCategory} from "../../store/category"
-
+import './logout.css'
 import {useDispatch, useSelector} from "react-redux";
 
 const LogoutButton = ({setAuthenticated}) => {
@@ -16,7 +16,7 @@ const LogoutButton = ({setAuthenticated}) => {
     await dispatch(logoutCategory());
   };
 
-  return <button onClick={onLogout}>Logout</button>;
+  return <button className='logging-out' onClick={onLogout}>Log out</button>;
 };
 
 export default LogoutButton;

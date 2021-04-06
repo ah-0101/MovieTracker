@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import './MoviePage.css'
 import movietrackerred from './movietrackerred.png'
+import FavoriteForm from './FavoriteForm'
 export default function MoviePage(){
     const id = useParams()
     const [movie, setMovie] = useState([])
@@ -43,7 +44,8 @@ export default function MoviePage(){
           
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{movie.movie_date}</p>
             <div>
-               <button className='btn-list'>&nbsp;&nbsp;&nbsp;Add to Watchlist</button>
+              &nbsp;&nbsp;&nbsp; <FavoriteForm/>
+              
             </div>
             <div>
                 <button className='btn-rate'>&nbsp;&nbsp;&nbsp;Rate This Movie</button>

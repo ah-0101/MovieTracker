@@ -1,0 +1,22 @@
+.logging-out {
+    background: #1a73e8;
+    border: 1px solid transparent;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: .25px;
+    line-height: 18px;
+    height: 39px;
+    width: 90px;
+    text-align: center;
+    /* padding: 9px 23px; */
+    vertical-align: middle;
+    border-radius: 10px 100px / 120px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-top: 0.33%;
+}
+
+.logging-out:hover {
+    background: #6097df;
+}

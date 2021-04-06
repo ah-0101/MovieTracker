@@ -82,11 +82,11 @@
 }
 
 .btn-list {
-    background-color: #f8f9fa;
+    /* background-color: #f8f9fa;
     border: 1px solid #f8f9fa;
     border-radius: 4px;
     color: #3c4043;
-    font-family: arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     margin: 11px 4px;
     padding: 0 16px;
@@ -95,7 +95,7 @@
     min-width: 54px;
     text-align: center;
     cursor: pointer;
-    user-select: none;
+    user-select: none; */
 }
 
 .btn-rate {
@@ -103,7 +103,7 @@
     border: 1px solid #f8f9fa;
     border-radius: 4px;
     color: #3c4043;
-    font-family: arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     margin: 10px 4px;
     padding: 0 16px;

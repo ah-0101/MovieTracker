@@ -3,17 +3,20 @@ import { Redirect, useHistory } from "react-router-dom";
 import { login } from "../../services/auth";
 import {useDispatch} from "react-redux";
 import {loginUser} from '../../store/session';
-
+import {useSelector} from 'react-redux'
 import "./loginform.css"
 
 
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
+  const sessionUser = useSelector(state => state.session.user)
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch()
   const history = useHistory()
+
+
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -30,14 +33,18 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   const updatePassword = (e) => {
     setPassword(e.target.value);
   };
-  console.log(loginUser({ email: "demo@aa.io", password: "password" }))
+
+  if(sessionUser){
+    return <Redirect to='/'/>
+  }
+  // console.log(loginUser({ email: "demo@aa.io", password: "password" }))
   return (
     <>
     <div >
 
     <form onSubmit={onLogin} className="login-form" >
     <div className='size'>
-    <h1 className='signin-tag'>Log In</h1>
+    <h1 className='signin-tag'>Sign In</h1>
       <div>
         {errors.map((error) => (
           <div>{error}</div>
@@ -63,8 +70,8 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           value={password}
           onChange={updatePassword}
           />
-        <button type="submit">Login</button>
-        <button className="demo-login" type="button" onClick={handleDemoLogin}>Demo Log In</button>
+        <button type="submit">Sign in</button>
+        <button className="demo-login" type="button" onClick={handleDemoLogin}>Demo Sign In</button>
       </div>
       </div>
 
