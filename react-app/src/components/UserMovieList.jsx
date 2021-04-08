@@ -32,7 +32,7 @@ export default function UserMovieList(){
        {movie.map(movie =>(
            <div className="outer-movielist_div">
                <div>
-           <img className="movie-class_div" id={movie.id}  width='300px' height='220' src={movie.movie_url} alt='nothing' />
+           <img className="movie-class_div" id={movie.id}  width='300px' height='220px' src={movie.movie_url} alt='nothing' />
                </div>
            </div>
        ))}
