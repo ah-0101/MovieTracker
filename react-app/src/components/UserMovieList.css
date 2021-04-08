@@ -1,12 +1,20 @@
 .cutter-edge_div {
-    margin-top: 10%;
+    margin-top: 3%;
 }
 
 .outer-movielist_div {
     margin-right: 75%;
     margin-left: 25%;
+    background-color: rgb(6, 46, 44);
+    width: 50%;
+    height: 100%;
 }
 
 .movie-class_div {
-    padding-top: 100px;
+    margin: 5px;
+    padding-right: 75%;
+    border: 2px solid #fff;
+    -moz-box-shadow: inset 10px 10px 400px #fff;
+    -webkit-box-shadow: inset 10px 10px 400px #fff;
+    box-shadow: inset 10px 10px 400px #fff;
 }
