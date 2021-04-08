@@ -12,7 +12,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { restoreUser } from "./store/session";
 import LoginPage from './components/LoginPage';
 import MoviePage from './components/MoviePage';
-
+import UserMovieList from './components/UserMovieList'
 
 function App() {
   const dispatch = useDispatch()
@@ -51,6 +51,10 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
+        <Route path="/watchlist" exact={true}>
+        <UserMovieList/>
+        </Route>
+
         <Route path="/" exact={true}>
           <Movie />
         </Route>
