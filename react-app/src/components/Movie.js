@@ -14,7 +14,6 @@ import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
 import {Redirect, useHistory,NavLink} from 'react-router-dom';
 import MovieInfoModal from './MovieInfoModal.jsx'
-import MovieInfo from './MovieInfo'
 import { Modal } from '../context/Modal';
 
 
