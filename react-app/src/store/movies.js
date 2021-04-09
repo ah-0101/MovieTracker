@@ -20,7 +20,7 @@ const readMovieFavorite = (movie) => ({
 export const getUserMovieFavorite = () => async(dispatch) => {
     const res = await fetch('api/favorites/moviefavorite')
     const jsonRes = await res.json()
-    console.log('new content >>>>>>>>>>> new >>>>>>>>>>>>>>>>', jsonRes)
+        // console.log('new content >>>>>>>>>>> new >>>>>>>>>>>>>>>>', jsonRes)
     dispatch(readMovieFavorite(jsonRes))
 }
 
