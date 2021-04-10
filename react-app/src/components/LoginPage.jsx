@@ -71,7 +71,7 @@ export default function LoginPage() {
                 <div className="search-field">
                     <span ><img className='search-icon' src={iconSearch} alt="not working"/></span>
                     </div>
-                 
+                    
                     <div>
                 <input className='search-input' onChange={handleSearchType} value={value} type="text" />
                     </div>
@@ -83,7 +83,7 @@ export default function LoginPage() {
                         </span> : null
                         }
                     </div>
-          
+            
                     <div>
 
                     {value.length ? 
@@ -105,15 +105,15 @@ export default function LoginPage() {
                                             {/* pic goes here  */}
                                         </div>
                                             <div className="inner-search">
-                                                <div className="inner-search-result">
-                                            <span>
-                                         <b id={movie.id} key={movie.id}  onClick={handleNavigate}>{movie.movie_name}</b>
+                                                <div  className="inner-search-result">
+                                            <span key={movie.id} >
+                                            <b id={movie.id} key={movie.id} style={{cursor: 'pointer'}} onClick={handleNavigate}>{movie.movie_name}</b>
                                             </span>
                                                 </div>
                                         </div>
                                         </ul>
                                         </>
-                                     ))}
+                                        ))}
 
                                     </div>
                                 
@@ -122,12 +122,12 @@ export default function LoginPage() {
                         </div>
                         
 
-: null
+    : null
 
 
 
-}
-</div>
+    }
+    </div>
                         {/* { search?.map(movie => (
                             <h1>{movie.id}</h1>
                         ))} */}
@@ -140,8 +140,8 @@ export default function LoginPage() {
                             <>
                         <div className={classHandler2} id={movie.id} >
                         {event === '' ? '':(<p className='search-ind'  id={movie.id}>
-                         <span className='colon'>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; </span> 
-                             {movie.movie_name}                             
+                            <span className='colon'>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; </span> 
+                                {movie.movie_name}                             
                         <br/>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>)}
                         </div>
                         </>
@@ -154,8 +154,8 @@ export default function LoginPage() {
 
         {/* <div className="outer-outer"> */}
             {/* <div className='player-wrapper'> */}
-       
-      {/* </div>
+        
+        {/* </div>
             <div className="outer-text">
                 <div>
 

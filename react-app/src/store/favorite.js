@@ -28,15 +28,31 @@ const readUserFavorite = (movie) => ({
 
 
 export const removeOneFavorite = (favId) => async(dispatch) => {
-    const res = await fetch(`/api/favorites/${favId}/`, {
+    const res = await fetch(`/api/favorites/${favId}`, {
         method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
     });
 
     dispatch(removeFavorite(favId));
 
-    return res;
 
 }
+
+// export const deleteUserComment = (commentId) => async dispatch => {
+//     const res = await fetch(`/api/videos/comment/${commentId}/delete`, {
+//       method: "DELETE",
+//       headers: {
+//         "Content-Type": "application/json"
+//       }
+//     })
+//     console.log("response", res)
+//     const data = await res.json()
+
+//     dispatch(deleteComment())
+
+//     return data
+//   }
+
 
 export const getOneFavorite = (favId) => async(dispatch) => {
     const res = await fetch(`/api/favorites/favmovie/${favId}`)

@@ -35,7 +35,7 @@ def get_one_movie_favorite(id):
     return jsonify(favorites.to_dict()) 
 
 
-@favorite_routes.route('/<id>')
+@favorite_routes.route('/<id>', methods=['DELETE'])
 def remove_favorite(id):
     removed = Favorite.query.filter(Favorite.movie_id == id).delete()
     # db.session.execute(favorites.to_dict())
