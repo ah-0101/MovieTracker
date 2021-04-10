@@ -150,7 +150,7 @@ export default function LoginPage() {
                 </div> */}
 
 
-                    <div className='footer' > <a href='https://github.com/Ace-0101/MovieTracker/'> Github Repo</a></div>
+                    <div className='footer' > <a href='https://github.com/Ace-0101/MovieTracker/'> Github Repo</a><a href="https://www.linkedin.com/in/maen-ace-habes-973034208/">Linkedin</a></div>
 
         {/* <div className="outer-outer"> */}
             {/* <div className='player-wrapper'> */}
