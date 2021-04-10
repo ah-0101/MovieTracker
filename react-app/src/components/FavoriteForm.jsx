@@ -15,6 +15,7 @@ export default function FavoriteForm(){
     const favorite = useSelector(state => (Object.keys(state.Favorite)))
     const [addFav, setAddFav] = useState(false)
     const [removeFav, setRemoveFav] = useState(false)
+    const [added, setAdded] = useState('Add to Watchlist')
 
     const id = useParams();
     const dispatch = useDispatch();
@@ -30,12 +31,14 @@ export default function FavoriteForm(){
             e.preventDefault();
             dispatch(addFavorite(id.movieId,user.id))
             setAddFav((prev) => !prev)
+            setAdded('Added to Watchlist ✅')
     }
     useEffect(() => dispatch(getOneFavorite(id.movieId)),[dispatch])
     // console.log(addFav)
     const removeFavSubmit = async (e) => {
         e.preventDefault()
         setAddFav((prev) => !prev)
+        setAdded('Add to Watchlist Again')
        await dispatch(removeOneFavorite(Number(favorite)))
     }
 
@@ -47,12 +50,12 @@ export default function FavoriteForm(){
         <>
         <div className='outer-checked'>
          {/* {addFav && <p className='checked'>✅</p>} */}
-         {addFav && <p className='checked'>✅</p>}
+         {/* {addFav && <p className='checked'>✅</p>} */}
          
         {user &&
         
         <form action="" method="POST">
-            <button className="btn-watchlist" onClick={handleFavSubmit} type="submit">Add to Watchlist</button>
+            <button className="btn-watchlist" onClick={handleFavSubmit} type="submit">{added}</button>
             
         </form>
             }
