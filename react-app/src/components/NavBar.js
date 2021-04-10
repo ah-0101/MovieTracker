@@ -188,6 +188,7 @@ import SignupFormModal from './auth/SignupFormModal'
          
           </li> */}
           <LogoutButton  setAuthenticated={setAuthenticated} />
+          
         </li>
         }
       </ul>

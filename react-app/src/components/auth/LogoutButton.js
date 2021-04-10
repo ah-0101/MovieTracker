@@ -18,6 +18,7 @@ const LogoutButton = ({setAuthenticated}) => {
     await dispatch(logoutUser());
     await dispatch(logoutMovie());
     await dispatch(logoutCategory());
+    history.push('/')
   };
 
   const redirect = (e) => {
