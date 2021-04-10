@@ -19,27 +19,24 @@ export default function FavoriteForm(){
     const id = useParams();
     const dispatch = useDispatch();
     const history = useHistory()
-    const movieIdNumber = Number(favorite[0])
- 
 
+    // const movieIdNumber = Number(favorite[0])
+    // console.log('sssnumber fave  >>>>>>',movieIdNumber)
+//  console.log()
+//  useEffect(()=>console.log('not a -',Number(favorite)) ,[favorite])
 
+// console.log('favorite state',Number(favorite[0]))
     const handleFavSubmit = (e) =>{
             e.preventDefault();
             dispatch(addFavorite(id.movieId,user.id))
             setAddFav((prev) => !prev)
     }
-    // useEffect(() => dispatch(getUserFavorite()),[dispatch,user])
     useEffect(() => dispatch(getOneFavorite(id.movieId)),[dispatch])
-
-    console.log(addFav)
-    const removeFavSubmit = (e) => {
+    // console.log(addFav)
+    const removeFavSubmit = async (e) => {
         e.preventDefault()
-                // dispatch(removeOneFavorite())
-        // favorite.map(fav => {
-        //     if(fav.movie_id == id.movieId){
-        //     }
-        //     // history.push('/')
-        // })
+        setAddFav((prev) => !prev)
+       await dispatch(removeOneFavorite(Number(favorite)))
     }
 
     const handleLoginFirst = (e) => {
@@ -49,8 +46,9 @@ export default function FavoriteForm(){
     return (
         <>
         <div className='outer-checked'>
+         {/* {addFav && <p className='checked'>✅</p>} */}
          {addFav && <p className='checked'>✅</p>}
-         {addFav && <p className='checked'>✅</p>}
+         
         {user &&
         
         <form action="" method="POST">
@@ -66,7 +64,7 @@ export default function FavoriteForm(){
         }
         {/* {LoginFirst && } */}
             </>
-            <button onClick={removeFavSubmit}>remove a fav</button>
+            {addFav && <button className="btn-watchlist" onClick={removeFavSubmit}>Remove from Watchlist</button>}
             </div>
            
         </>
