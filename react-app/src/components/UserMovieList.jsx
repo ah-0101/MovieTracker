@@ -11,7 +11,6 @@ import "./UserMovieList.css"
 export default function UserMovieList(){
     const user = useSelector(state => state.session.user?.id) // = 1
     const movie = useSelector(state => Object.values(state.movies))
-    console.log('useselector',movie.length)
     const dispatch = useDispatch()
     const history = useHistory()
     
@@ -74,6 +73,14 @@ export default function UserMovieList(){
                 <div className='movie-name_div'>
                <div>
                <p style={{color:"black"}}>{movie.movie_info}</p>
+               </div>
+               <div>
+                   {movie.category_id == 1? <p>Action Movie</p>:
+                   movie.category_id == 2? <p>Horror Movie</p>:
+                   movie.category_id == 3? <p>Comedy Movie</p>:
+                   movie.category_id == 4?<p>Kids</p>:
+                   movie.category_id == 5? <p>Tv Show and ٍSeries</p>:
+                   movie.category_id == 6? <p>Thriller Movie</p>:''}
                </div>
             </div>
            </div>

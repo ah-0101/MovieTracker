@@ -59,6 +59,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           placeholder="Email"
           value={email}
           onChange={updateEmail}
+          required={true}
           />
       </div>
       <div>
@@ -69,6 +70,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           placeholder="Password"
           value={password}
           onChange={updatePassword}
+          required={true}
           />
         <button type="submit">Sign in</button>
         <button className="demo-login" type="button" onClick={handleDemoLogin}>Demo Sign In</button>

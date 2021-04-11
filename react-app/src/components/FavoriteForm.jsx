@@ -63,7 +63,7 @@ export default function FavoriteForm(){
 
             {
             !user && 
-            <ul onClick={handleLoginFirst} className="btn-watchlist"  >Add to Watchlist<div style={{ marginTop:'-24px',color:'red',fontSize:'40px',color:"transparent"}}><LoginFormModal/></div></ul>
+            <button onClick={handleLoginFirst} className="btn-watchlist"  >Add to Watchlist<div style={{ marginTop:'-24px',color:'red',fontSize:'40px',color:"transparent"}}><LoginFormModal/></div></button>
         }
         {/* {LoginFirst && } */}
             </>
