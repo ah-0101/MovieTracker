@@ -75,6 +75,8 @@ export default function FavoriteReducer(state = {}, action) {
 }
 ```
 
+##### This code is showing how the element for the search is displaying 
+
 ``` javascript 
  { search?.map(movie => (
     <>
@@ -91,4 +93,13 @@ export default function FavoriteReducer(state = {}, action) {
       </ul>
    </>
  ))}
+```
+
+##### This code is for restoring the user using the redux store 
+``` javascript
+export const restoreUser = () => async(dispatch) => {
+    const res = await authenticate();
+    dispatch(setUser(res));
+    return res;
+};
 ```
