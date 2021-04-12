@@ -2,7 +2,7 @@
 
 Brief Introduction Inspired by google.com, MovieTracker is a the place where you can track movies and add them to your list.
 
-### [live link](https://movie-tracker-aa.herokuapp.com)
+### [MokvieTracker Live](https://movie-tracker-aa.herokuapp.com)
 
 ![Alt text](https://github.com/Ace-0101/MovieTracker/blob/main/movieTrackerPage.png)
 
