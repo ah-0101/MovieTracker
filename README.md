@@ -74,3 +74,22 @@ export default function FavoriteReducer(state = {}, action) {
     }
 }
 ```
+
+``` javascript 
+ { search?.map(movie => (
+                                        <>
+                                        <ul className="inner-ul">
+
+                                        <div className="inner-search-icon">
+                                        </div>
+                                            <div className="inner-search">
+                                                <div  className="inner-search-result">
+                                            <span key={movie.id} >
+                                            <b id={movie.id} key={movie.id} style={{cursor: 'pointer'}} onClick={handleNavigate}>{movie.movie_name}</b>
+                                            </span>
+                                                </div>
+                                        </div>
+                                        </ul>
+                                        </>
+                                        ))}
+```
