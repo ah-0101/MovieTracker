@@ -48,3 +48,29 @@ def getMovieInfo(id):
     return jsonify([movie.to_dict() for movie in search_for_movie])
 ```
    
+##### This code for the redux store where normalization happened, retriving the data much faster 
+``` javascript
+
+export default function FavoriteReducer(state = {}, action) {
+    let newState = {}
+    switch (action.type) {
+        case SET_FAVORITE:
+            newState = {...state, [action.payload.result.id]: action.payload.result }
+            return newState
+        case READ_FAVORITE:
+            action.payload.forEach(movie => {
+                newState[movie.movie_id] = movie
+            })
+            return newState
+        case REMOVE_FAVORITE:
+            newState = {...state };
+            delete newState[action.payload];
+            return newState;
+        case READ_ONE_FAVORITE:
+            newState = {...state, [action.payload.id]: action.payload }
+            return newState;
+        default:
+            return state
+    }
+}
+```
