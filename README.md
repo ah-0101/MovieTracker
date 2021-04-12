@@ -36,3 +36,15 @@ Brief Introduction Inspired by google.com, MovieTracker is a the place where you
     *Search for any movie directly from the main page without signing in, the website will require sign in only if you want to favorite a movie and added it to your watchlist
     *You can add to your watchlist and remove from your watch list
    
+
+   
+## Codes
+##### This is the search route 
+* ```python 
+
+@movie_routes.route('/<id>')
+def getMovieInfo(id):
+    search_for_movie = Movie.query.filter(Movie.movie_name.ilike(f'%{id}%')).limit(7) #taking out the % sign will make the search only for starts with 
+    return jsonify([movie.to_dict() for movie in search_for_movie])
+```
+   
