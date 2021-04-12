@@ -40,7 +40,7 @@ Brief Introduction Inspired by google.com, MovieTracker is a the place where you
    
 ## Codes
 ##### This is the search route 
-* ```python 
+```python 
 
 @movie_routes.route('/<id>')
 def getMovieInfo(id):
