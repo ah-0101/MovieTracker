@@ -1,3 +1,4 @@
+import { func } from 'prop-types';
 import React,{useState,useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import {useDispatch} from 'react-redux';
@@ -8,9 +9,11 @@ import {getUserMovieFavorite} from '../store/movies'
 import "./UserMovieList.css"
 
 
-export default function UserMovieList(){
+export default  function UserMovieList(){
     const user = useSelector(state => state.session.user?.id) // = 1
     const movie = useSelector(state => Object.values(state.movies))
+    const [sugMovie, setSugMovie] = useState([])
+
     const dispatch = useDispatch()
     const history = useHistory()
     
@@ -34,7 +37,21 @@ export default function UserMovieList(){
             e.target.innerText = 'Removed'
         }
 
-              
+        
+                        // you will need to fetch the data and the display it directly from the api service
+                        // inOrder to have the number for the favorite category_id so doing it this way without useEffect 
+                        // will do infinte loop
+
+                //  async function fetching(){
+
+                //     if(movie[0]?.category_id){
+                //         const movieSuggestorFetch = await fetch(`/api/movies/category/${movie[0]?.category_id}`)
+                //         const jsonMovieSugg = await movieSuggestorFetch.json()
+                //         setSugMovie(jsonMovieSugg)
+                //         console.log('bingo > >> >',sugMovie)
+                //     }
+                    
+                // }
    
         return(
             <>
@@ -101,13 +118,13 @@ export default function UserMovieList(){
    
 
           <button style={{marginLeft:"46%"}} value={movie.id} onClick={removeFavSubmit} className="btn-watchlist" >Remove from Watchlist</button>
-          
-       
            </>
        ))}
        </div>
        </div>
                 {movie.length? '': <h1 style={{marginLeft:"38%",color:"darkgray"}}>Your Watchlist is empty</h1>}
+
+                
                 <div className='footer' > <a href='https://github.com/Ace-0101/MovieTracker/'> Github Repo</a><a href="https://www.linkedin.com/in/maen-ace-habes-973034208/">Linkedin</a></div>
        </>
     )
