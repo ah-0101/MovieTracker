@@ -18,24 +18,15 @@ export default function LoginPage() {
     const handleSearchType = async (e) => {
         let keyword = e.target.value
         setValue(keyword)
-        console.log('sssssssssss',value)
-        // setClearValue(keyword)
+        
         if (keyword === '') {
             return
-        //     setClassHandler('search-icon')
-        //     setClassHandler2('search-ind-none')
-        //     return
-        }
-        //     setClassHandler('search-icon-none')
-        //     setClassHandler2('')
+                }
         
         const movieSearch = await fetch(`/api/movies/${keyword}`);
         let jsonMovie = await movieSearch.json();
 
             setSearch(jsonMovie)
-        // console.log(search)
-        // console.log(e.target.value)
-        // search.map(map => console.log(map))
     }
 
     
@@ -102,7 +93,6 @@ export default function LoginPage() {
                                         <ul className="inner-ul">
 
                                         <div className="inner-search-icon">
-                                            {/* pic goes here  */}
                                         </div>
                                             <div className="inner-search">
                                                 <div  className="inner-search-result">
