@@ -1,8 +1,8 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux"
 import {useEffect, useState} from "react"
-import {loadMovie} from "../store/movies"
-import {addCategory} from "../store/category"
+import {loadMovie} from "../../store/movies"
+import {addCategory} from "../../store/category"
 import ReactPlayer from 'react-player'
 import { Player,ControlBar  } from 'video-react';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,9 +13,9 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
 import {Redirect, useHistory,NavLink} from 'react-router-dom';
-import MovieInfoModal from './MovieInfoModal.jsx'
-import { Modal } from '../context/Modal';
-import ImgMediaCard from "./imageCardMaterial"
+import MovieInfoModal from '../MovieInfoModal.jsx'
+import { Modal } from '../../context/Modal';
+import ImgMediaCard from "../imageCardMaterial"
 
 import './Movie.css'
 // import videos from '../videos';

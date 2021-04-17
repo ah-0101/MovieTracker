@@ -6,12 +6,12 @@ import NavBar from "./components/NavBar/index.jsx";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
-import Movie from "./components/Movie";
+import Movie from "./components/Movie/index.js";
 import { authenticate } from "./services/auth";
 import {useDispatch, useSelector} from 'react-redux';
 import { restoreUser } from "./store/session";
 import LoginPage from './components/LoginPage';
-import MoviePage from './components/MoviePage';
+import MoviePage from './components/MoviePage/index.jsx';
 import UserMovieList from './components/UserMovieList/index.jsx'
 
 function App() {

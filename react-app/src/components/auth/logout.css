@@ -20,3 +20,9 @@
 .logging-out:hover {
     background: #6097df;
 }
+
+.edge-btns_out {
+    display: flex;
+    /* flex-wrap: wrap; */
+    padding: 10px;
+}
