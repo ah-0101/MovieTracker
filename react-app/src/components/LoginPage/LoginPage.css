@@ -258,3 +258,17 @@
     .holder {
         /* width: 1500px; */
     }
+    
+    .explore-btn {
+        position: fixed;
+        left: 44%;
+        bottom: 40%;
+        width: 200px;
+        height: 50px;
+        border: none;
+        cursor: pointer;
+        color: rgb(33, 143, 33);
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }

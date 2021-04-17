@@ -15,7 +15,7 @@ import Paper from '@material-ui/core/Paper';
 import {Redirect, useHistory,NavLink} from 'react-router-dom';
 import MovieInfoModal from './MovieInfoModal.jsx'
 import { Modal } from '../context/Modal';
-
+import ImgMediaCard from "./imageCardMaterial"
 
 import './Movie.css'
 // import videos from '../videos';
@@ -86,10 +86,12 @@ const Movie = () => {
 console.log('movie id is here ',movieId)
     return (
         <>
+        {/* <html className="html">
+          
         <div className="height-page">
         
-      <header className="home-land">
-      <div className='player-wrapper'>
+      <header className="home-land"> */}
+      {/* <div className='player-wrapper'>
         <ReactPlayer
           url='https://vimeo.com/20914353'
           loop
@@ -97,35 +99,25 @@ console.log('movie id is here ',movieId)
           controls={false}
           className='react-player'
           playing
-          width='100%'
-          height='100%'
-        />
-      </div>
+          width='90%'
+          height='90%'
+          style={{marginTop:'7%',marginLeft:'5%',marginRight:'90%'}}
+          />
+      </div> */}
 
-      
+{/*       
           <div className="action-movie-title">ٍAction Movies</div>
-          {/* <div className="grid-container"> */}
           <div className="action-movie-div-1">
           {movies?.map(movie =>(
             <>
           {
-            // <>
-            // {movie.category_id === 1 &&
-            // <button id={movie.id} onClick={() => setShowModal(true)}>
-            // info
-            // </button>}
             <div > { movie.category_id === 1 && <img  id={movie.id}  width='300px' height='220' src={movie.movie_url} alt='nothing' />}
             {movie.category_id === 1 &&
               <NavLink to={`/${ movie.id}`}>movie info</NavLink>}
             </div> 
-            // </>
+            
             
           } 
-           {/* {showModal && (
-            <Modal onClose={() => setShowModal(false)}>
-              <MovieInfo movieId={movieId}/>
-            </Modal>
-          )} */}
           </>
         ))}
         </div>
@@ -143,7 +135,7 @@ console.log('movie id is here ',movieId)
         </div>
 
           <div className="comedies-movie-title">ٍComedies</div>
-        {/* <div className='black-bottom'> */}
+       
           <div className="comedies-movie-div">
           {movies?.map(movie =>(
             <>
@@ -192,46 +184,21 @@ console.log('movie id is here ',movieId)
         ))}
         </div>
         </div>
-        {/* </div> */}
+     
         </header>
 
         </div>
-        
+         */}
+    <div className="card-container">
 
-         
-
-
-
-        {/* <div className='outer-category'>
-        {categories?.map(category => (
-          <div>
-          <h1>{category.id === 1? 1: ''}</h1>
-          </div>
-          ))}
-          </div> */}
-          {/* <div  className='outer-movie'>
-        
-        {movies?.map(movie =>(
-          <>
-          <div> {movie.category_id === 1? movie.movie_name: ''} </div>
-          
-          </>
-        ))}
-        </div> */}
-        {/* <h1 className='inner-movie'>{movie.category_id == 1?movie.movie_url: null}</h1> */}
-        {/* <ReactPlayer width='750px' height='500px'
-      playIcon  url={movie.category_id === 1? movie.movie_url: null} />           */}
-        {/* <video autoplay loop controls >
-        <source src={`../videos/${movie.movie_url}`} type="video/mp4"/>
-      </video> */}
-    {/* <Player> */}
-      {/* <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" /> */}
-      {/* <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" /> */}
-    {/* </Player> */}
-          {/* <video autoplay loop  > */}
-            {/* <source src={`../videos/MC.mp4`} type="video/mp4"/> */}
-          {/* </video> */}
-      </>
+    {movies?.map(movie =>(
+      <>
+        <ImgMediaCard movie={movie}/>
+        </>
+                  ))}
+                  </div>
+{/* </html> */}
+</>
     )
 }
 
