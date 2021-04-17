@@ -55,7 +55,7 @@ function App() {
         <UserMovieList/>
         </Route>
 
-        <Route path="/" exact={true}>
+        <Route path="/explore" exact={true}>
           <Movie />
         </Route>
         <Route path="/:movieId" exact={true}>

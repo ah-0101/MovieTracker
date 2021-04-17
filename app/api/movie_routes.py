@@ -21,9 +21,9 @@ def getMovieNum(id):
     search_for_movie = Movie.query.filter(Movie.category_id == id).limit(3) 
     return jsonify([movie.to_dict() for movie in search_for_movie])
 
-# @movie_routes.route('/movie/<int:id>')
-# def getMovieInfo(id):
-#     search_for_movie = Movie.query.filter(Movie.id.like(id)).all()
-#     return jsonify([movie.to_dict() for movie in search_for_movie])
+@movie_routes.route('/')
+def getMovies():
+    movies = Movie.query.all()
+    return jsonify([movie.to_dict() for movie in movies])
 
 

@@ -28,6 +28,7 @@ export const getUserMovieFavorite = () => async(dispatch) => {
 export const loadMovie = () => async(dispatch) => {
     const res = await fetch('/api/movies')
     const jsonRes = await res.json()
+    console.log('what is happening???>>>>>>>>>>>>',jsonRes)
     dispatch(load(jsonRes));
 };
 
@@ -43,7 +44,7 @@ const MoviesReducer = (state = {}, action) => {
     let newState = {};
     switch (action.type) {
         case LOAD_MOVIES:
-            action.payload.movies.forEach(movie => {
+            action.payload.forEach(movie => {
                 newState[movie.id] = movie
             })
             return newState;

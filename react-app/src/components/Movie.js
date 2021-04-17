@@ -41,6 +41,7 @@ const Movie = () => {
     const categories = Object.values(categoriesState)
     const movies = Object.values(stateMovie)
     // const [play,setPlay] = useState(false)
+    console.log('?>>>>>>>>>>>>>>>>>>>>>?',movies)
     const [spacing, setSpacing] = React.useState(2);
     const [movieId, setMovieId] = useState(0) 
     const [MovieInfoState, setMovieInfoState] = useState() 
