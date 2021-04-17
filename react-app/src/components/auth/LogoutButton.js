@@ -28,10 +28,13 @@ const LogoutButton = ({setAuthenticated}) => {
 
   return(
 <>
+<div className="edge-btns_out">
+
 <div style={{paddingBottom:"7px"}}>
    <button  className='logging-out' onClick={redirect}>Watchlist</button>
 </div>
    <button className='logging-out' onClick={onLogout}>Log out</button>
+</div>
    </>
   ) 
 };

@@ -7,7 +7,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import movietrackerred from '../movietrackerred.png'
 import {useHistory} from 'react-router-dom'
 
 const useStyles = makeStyles({
@@ -20,8 +19,8 @@ const useStyles = makeStyles({
     width:'100px',
     backgroundColor:'white',
     cursor:'pointer',
-    color:'blue'
-
+    color:'rgb(150, 101, 216)',
+    fontWeight:'bold',
   }
 });
 
