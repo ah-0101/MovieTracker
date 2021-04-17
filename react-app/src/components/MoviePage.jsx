@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import './MoviePage.css'
 import movietrackerLogo from '../images/movietrackerLogo.png'
-import FavoriteForm from './FavoriteForm'
+import FavoriteForm from './FavoriteForm/index.jsx'
 export default function MoviePage(){
     const id = useParams()
     const [movie, setMovie] = useState([])
