@@ -206,7 +206,7 @@
     }
     
     .inner-search-icon {
-        background: url(./iconSearch.jpg) no-repeat 0 0;
+        background: url(../../images/iconSearch.jpg) no-repeat 0 0;
         background-size: 20px;
         min-height: 20px;
         min-width: 20px;

@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import {useDispatch} from 'react-redux';
 import {useHistory,Redirect} from 'react-router-dom'
 
-import {removeOneFavorite,getUserFavorite} from '../store/favorite'
-import {getUserMovieFavorite} from '../store/movies'
+import {removeOneFavorite,getUserFavorite} from '../../store/favorite'
+import {getUserMovieFavorite} from '../../store/movies'
 import "./UserMovieList.css"
 
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {useSelector} from 'react-redux'
-import LogoutButton from './auth/LogoutButton';
+import LogoutButton from '../auth/LogoutButton';
 import './NavBar.css'
-import LoginFormModal from './auth/LoginFormModal'
-import SignupFormModal from './auth/SignupFormModal'
+import LoginFormModal from '../auth/LoginFormModal'
+import SignupFormModal from '../auth/SignupFormModal'
 
 // export default function NavBar({ setAuthenticated }) {
   

@@ -3,9 +3,8 @@ import ReactPlayer from 'react-player'
 import {Redirect,useHistory} from 'react-router-dom'
 import {useState} from 'react'
 import './LoginPage.css'
-import movietrackerLogo from "./movietrackerLogo.png"
-import SearchBar from './SearchBar'
-import iconSearch from './iconSearch.jpg'
+import movietrackerLogo from "../../images/movietrackerLogo.png"
+import iconSearch from '../../images/iconSearch.jpg'
 export default function LoginPage() {
     const [classHandler, setClassHandler] = useState("search-icon")
     const [classHandler2, setClassHandler2] = useState("search-ind-none")

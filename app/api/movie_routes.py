@@ -13,7 +13,12 @@ def movies(id):
 
 @movie_routes.route('/<id>')
 def getMovieInfo(id):
-    search_for_movie = Movie.query.filter(Movie.movie_name.ilike(f'%{id}%')).limit(7)
+    search_for_movie = Movie.query.filter(Movie.movie_name.ilike(f'%{id}%')).limit(7) #taking out the % sign will make the search only for starts with 
+    return jsonify([movie.to_dict() for movie in search_for_movie])
+
+@movie_routes.route('/category/<int:id>')
+def getMovieNum(id):
+    search_for_movie = Movie.query.filter(Movie.category_id == id).limit(3) 
     return jsonify([movie.to_dict() for movie in search_for_movie])
 
 # @movie_routes.route('/movie/<int:id>')
