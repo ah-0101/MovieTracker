@@ -2,11 +2,11 @@ import React, {useState,useEffect} from 'react';
 import {useParams,Redirect,useHistory} from 'react-router-dom' 
 import {useSelector, useDispatch} from 'react-redux'
 
-import LoginFormModal from './auth/LoginFormModal'
-import {addFavorite} from '../store/favorite'
-import {getUserFavorite} from '../store/favorite'
-import {removeOneFavorite} from '../store/favorite'
-import {getOneFavorite} from '../store/favorite'
+import LoginFormModal from '../auth/LoginFormModal'
+import {addFavorite} from '../../store/favorite'
+import {getUserFavorite} from '../../store/favorite'
+import {removeOneFavorite} from '../../store/favorite'
+import {getOneFavorite} from '../../store/favorite'
 import './FavoriteForm.css'
 
 export default function FavoriteForm(){

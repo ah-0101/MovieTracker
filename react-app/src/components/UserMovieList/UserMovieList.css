@@ -13,7 +13,7 @@
 .top-rapper {
     /* margin-top: 30%; */
     border-right: 3px solid rgb(241, 237, 237);
-    background-image: url(./movietrackerLogo.png);
+    background-image: url(../../images/movietrackerLogo.png);
     background-repeat: no-repeat;
     background-position: center;
     /* display: inline; */
