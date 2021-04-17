@@ -12,7 +12,7 @@ import {useHistory} from 'react-router-dom'
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-    margin:"5px"
+    margin:"95px"
   },
   explore:{
     border:'none',
@@ -44,6 +44,7 @@ export default function ImgMediaCard({movie}) {
           height="140"
           image={movie.movie_url}
           title="Contemplative Reptile"
+          style={{height:"300px"}}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

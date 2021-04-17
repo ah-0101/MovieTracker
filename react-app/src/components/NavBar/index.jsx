@@ -155,7 +155,7 @@ import SignupFormModal from '../auth/SignupFormModal'
               const NavBar = ({ setAuthenticated }) => {
                 const user = useSelector(state => state.session.user)
                 return (
-                  <nav>
+                  <nav className='nav-is_nav'>
       <ul className='nav'>
         <li>
           <NavLink to="/" exact={true} activeClassName="active">

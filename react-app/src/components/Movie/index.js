@@ -17,6 +17,8 @@ import MovieInfoModal from '../MovieInfoModal.jsx'
 import { Modal } from '../../context/Modal';
 import ImgMediaCard from "../imageCardMaterial"
 
+import movietrackerLogo from '../../images/movietrackerLogo.png'
+
 import './Movie.css'
 // import videos from '../videos';
 const useStyles = makeStyles((theme) => ({
@@ -91,19 +93,23 @@ console.log('movie id is here ',movieId)
         <div className="height-page">
         
       <header className="home-land"> */}
-      {/* <div className='player-wrapper'>
+        <div className="movie-logo-holder">
+            <img src={movietrackerLogo} style={{padding:'20px'}} alt=""/>
+        </div>
+      <div className='player-wrapper'>
         <ReactPlayer
           url='https://vimeo.com/20914353'
           loop
           muted
-          controls={false}
-          className='react-player'
+          controls={false }
+          
+          className='react-player with-controls'
           playing
-          width='90%'
-          height='90%'
-          style={{marginTop:'7%',marginLeft:'5%',marginRight:'90%'}}
+          width='100%'
+          height='100%'
+          
           />
-      </div> */}
+      </div>
 
 {/*       
           <div className="action-movie-title">ٍAction Movies</div>

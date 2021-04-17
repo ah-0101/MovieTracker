@@ -162,8 +162,19 @@
 
 .player-wrapper {
     position: relative;
-    padding-top: 56.25%;
+    padding-top: 40%;
     z-index: 0;
+    /* margin-left: 20%; */
+    margin-top: 5%;
+    border: 0px solid rgb(226, 215, 215);
+    box-shadow: 10px 10px grey;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(16px 16px 20px rgb(28, 134, 233)) invert(15%);
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* padding: 5px; */
+    /* justify-content: space-evenly; */
+    /* margin-top: 7%; */
     /* 720 / 1280 = 0.5625 */
 }
 

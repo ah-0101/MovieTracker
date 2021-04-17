@@ -1,3 +1,13 @@
+.nav-is_nav {
+    background-color: rgb(220, 235, 222);
+    filter: drop-shadow(16px 16px 20px rgb(28, 134, 233));
+    height: 55px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
 ul.nav {
     margin: 0;
     padding: 0;
