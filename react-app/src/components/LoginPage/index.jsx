@@ -34,7 +34,10 @@ export default function LoginPage() {
         setValue('')
     }
     // history.push(`/${movId}`)
-
+    const handleExploreClick = (e) => {
+        e.preventDefault()
+        history.push('/explore')
+    }
     const handleNavigate = async (e) => {
         e.preventDefault()
          setMovId(e.target.id)
@@ -127,17 +130,18 @@ export default function LoginPage() {
                     {
                         search?.map(movie=> (
                             <>
-                        <div className={classHandler2} id={movie.id} >
-                        {event === '' ? '':(<p className='search-ind'  id={movie.id}>
+                            <div className={classHandler2} id={movie.id} >
+                            {event === '' ? '':(<p className='search-ind'  id={movie.id}>
                             <span className='colon'>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; </span> 
-                                {movie.movie_name}                             
-                        <br/>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>)}
-                        </div>
-                        </>
-                    ))
-                }
-                </div> */}
+                            {movie.movie_name}                             
+                            <br/>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>)}
+                            </div>
+                            </>
+                            ))
+                        }
+                    </div> */}
 
+                   {!value.length && <button onClick={handleExploreClick} className='explore-btn'>Explore Movies</button>}
 
                     <div className='footer' > <a href='https://github.com/Ace-0101/MovieTracker/'> Github Repo</a><a href="https://www.linkedin.com/in/maen-ace-habes-973034208/">Linkedin</a></div>
 

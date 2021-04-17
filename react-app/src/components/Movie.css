@@ -1,10 +1,22 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    justify-content: space-evenly;
+    margin-top: 7%;
+}
+
+.html {
+    /* background-color: rgba(224, 202, 202, 0.993); */
+}
+
 .action-movie-div {
     display: flex;
 }
 
 .height-page {
     height: 300vh;
-    background-color: rgba(15, 15, 15, 0.993);
+    /* background-color: rgba(184, 180, 180, 0.993); */
 }
 
 .home-land {
