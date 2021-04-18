@@ -46,7 +46,8 @@ const Movie = () => {
     console.log('?>>>>>>>>>>>>>>>>>>>>>?',movies)
     const [spacing, setSpacing] = React.useState(2);
     const [movieId, setMovieId] = useState(0) 
-    const [MovieInfoState, setMovieInfoState] = useState() 
+    const [trailerUrl, setTrailerUrl] = useState('https://www.youtube.com/watch?v=QYU8zydUqD8')
+    const [muted,setMuted] = useState(true)
     const [showModal, setShowModal] = useState(false);
     
     const classes = useStyles();
@@ -98,10 +99,10 @@ console.log('movie id is here ',movieId)
         </div>
       <div className='player-wrapper'>
         <ReactPlayer
-          url='https://vimeo.com/20914353'
+          url={trailerUrl}
           loop
-          muted
-          controls={false }
+          muted={muted}
+          controls={false}
           
           className='react-player with-controls'
           playing
@@ -199,7 +200,7 @@ console.log('movie id is here ',movieId)
 
     {movies?.map(movie =>(
       <>
-        <ImgMediaCard movie={movie}/>
+        <ImgMediaCard movie={movie} setTrailerUrl={setTrailerUrl} setMuted={setMuted}/>
         </>
                   ))}
                   </div>

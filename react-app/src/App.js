@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar/index.jsx";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
-import Movie from "./components/Movie/index.js";
+import Movie from "./components/Movie/index.jsx";
 import { authenticate } from "./services/auth";
 import {useDispatch, useSelector} from 'react-redux';
 import { restoreUser } from "./store/session";
