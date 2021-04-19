@@ -272,3 +272,7 @@
         font-weight: bold;
         text-align: center;
     }
+    
+    .explore-btn:hover {
+        border: 1px solid rgb(189, 186, 186);
+    }

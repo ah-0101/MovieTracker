@@ -30,28 +30,9 @@ export default  function UserMovieList(){
 
         const removeFavSubmit =  (e) => {
             e.preventDefault()
-            // setAddFav((prev) => !prev)
-            // setAdded('Add to Watchlist Again')
-            // console.log('ssssssssssssssssssss>?',Number(e.target.value))
             dispatch(removeOneFavorite(Number(e.target.value)))
             e.target.innerText = 'Removed'
         }
-
-        
-                        // you will need to fetch the data and the display it directly from the api service
-                        // inOrder to have the number for the favorite category_id so doing it this way without useEffect 
-                        // will do infinte loop
-
-                //  async function fetching(){
-
-                //     if(movie[0]?.category_id){
-                //         const movieSuggestorFetch = await fetch(`/api/movies/category/${movie[0]?.category_id}`)
-                //         const jsonMovieSugg = await movieSuggestorFetch.json()
-                //         setSugMovie(jsonMovieSugg)
-                //         console.log('bingo > >> >',sugMovie)
-                //     }
-                    
-                // }
    
         return(
             <>

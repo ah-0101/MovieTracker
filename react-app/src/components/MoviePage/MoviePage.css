@@ -122,3 +122,17 @@
     cursor: pointer;
     user-select: none; */
 }
+
+.player-wrapper_movie {
+    position: relative;
+    padding-top: 40%;
+    z-index: 0;
+    /* margin-left: 20%; */
+    /* margin-top: 1%; */
+    height: 170px;
+    width: 900px;
+    border: 0px solid rgb(226, 215, 215);
+    box-shadow: 10px 10px grey;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(16px 16px 20px rgb(28, 134, 233)) invert(15%);
+}
