@@ -22,7 +22,7 @@ export default function LoginPage() {
             return
                 }
         
-        const movieSearch = await fetch(`/api/movies/${keyword}`);
+        const movieSearch = await fetch(`/api/movies/${keyword}/`);
         let jsonMovie = await movieSearch.json();
 
             setSearch(jsonMovie)

@@ -10,7 +10,7 @@ export default function MoviePage(){
         useEffect(async() => {
             try{
 
-                const movieRes = await fetch(`/api/movies/${id.movieId}`)
+                const movieRes = await fetch(`/api/movies/${id.movieId}/`)
                 const jsonMovieRes = await movieRes.json()
                 setMovie(jsonMovieRes)
             }

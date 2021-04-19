@@ -11,7 +11,7 @@ const removeCategory = () => ({
 })
 
 export const addCategory = () => async(dispatch) => {
-    const res = await fetch('api/categories');
+    const res = await fetch('/api/categories/');
     const jsonRes = await res.json();
     dispatch(add(jsonRes));
 };
