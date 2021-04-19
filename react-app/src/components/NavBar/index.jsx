@@ -158,7 +158,7 @@ import SignupFormModal from '../auth/SignupFormModal'
                   <nav className='nav-is_nav'>
       <ul className='nav'>
         <li>
-          <NavLink to="/" exact={true} activeClassName="active">
+          <NavLink to="/" exact={true} className="active">
             Home
           </NavLink>
         </li>

@@ -93,3 +93,12 @@ ul.nav li.current a {
 .btn-padding_signup {
     margin-right: 6%;
 }
+
+.active {
+    color: rgb(0, 0, 0);
+    margin-left: 15%;
+}
+
+.active:hover {
+    text-decoration: underline;
+}

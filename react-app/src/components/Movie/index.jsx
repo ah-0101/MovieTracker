@@ -80,20 +80,12 @@ const Movie = () => {
 // };
 
     const handleClickMovie = (e) => {
-      // e.preventDefault();
+      e.preventDefault();
       setMovieId(e.target.id)
-      // setMovieInfoState(<MovieInfoModal movieId={movieId}/>)
-      // return MovieInfoState
-      // history.push('/movie-info')
     }
 console.log('movie id is here ',movieId)
     return (
         <>
-        {/* <html className="html">
-          
-        <div className="height-page">
-        
-      <header className="home-land"> */}
         <div className="movie-logo-holder">
             <img src={movietrackerLogo} style={{padding:'20px'}} alt=""/>
         </div>

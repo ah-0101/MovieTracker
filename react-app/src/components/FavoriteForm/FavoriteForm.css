@@ -18,6 +18,10 @@
     user-select: none;
 }
 
+.btn-watchlist:hover {
+    background-color: #bfcddb;
+}
+
 .outer-checked {
     display: flex;
 }
