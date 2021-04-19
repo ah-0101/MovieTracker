@@ -24,18 +24,18 @@ def movie_favorite():
     return jsonify([favorite.to_dict() for favorite in favorites])
 
 
-@favorite_routes.route('/moviefavorite')
+@favorite_routes.route('/moviefavorite/')
 def get_all_movie_favorite():
     favorites = Movie.query.join(Favorite).filter(current_user.id == Favorite.user_id).all()
     return jsonify([favorite.to_dict() for favorite in favorites])
 
-@favorite_routes.route('/favmovie/<id>')
+@favorite_routes.route('/favmovie/<id>/')
 def get_one_movie_favorite(id):
     favorites = Movie.query.get(id)
     return jsonify(favorites.to_dict()) 
 
 
-@favorite_routes.route('/<id>', methods=['DELETE'])
+@favorite_routes.route('/<id>/', methods=['DELETE'])
 def remove_favorite(id):
     removed = Favorite.query.filter(Favorite.movie_id == id).delete()
     # db.session.execute(favorites.to_dict())

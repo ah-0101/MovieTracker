@@ -28,7 +28,7 @@ const readUserFavorite = (movie) => ({
 
 
 export const removeOneFavorite = (favId) => async(dispatch) => {
-    const res = await fetch(`/api/favorites/${favId}`, {
+    const res = await fetch(`/api/favorites/${favId}/`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
     });
@@ -55,7 +55,7 @@ export const removeOneFavorite = (favId) => async(dispatch) => {
 
 
 export const getOneFavorite = (favId) => async(dispatch) => {
-    const res = await fetch(`/api/favorites/favmovie/${favId}`)
+    const res = await fetch(`/api/favorites/favmovie/${favId}/`)
     const jsonRes = await res.json();
     dispatch(readOneFavorite(jsonRes));
     return res;
