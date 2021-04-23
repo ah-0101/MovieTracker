@@ -49,6 +49,9 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   }
 
   return (
+    <div >
+
+
     <form className='outer-signup-modal' onSubmit={onSignUp}>
       <div className='size'>
 
@@ -62,7 +65,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           value={username}
           placeholder="User Name"
           required={true}
-        ></input>
+          ></input>
       </div>
       <div>
         <input
@@ -72,7 +75,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           value={email}
           placeholder="Email"
           required={true}
-        ></input>
+          ></input>
       </div>
       <div>
        
@@ -83,7 +86,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           value={password}
           placeholder="Password"
           required={true}
-        ></input>
+          ></input>
       </div>
       <div>
         <input
@@ -94,7 +97,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           required={true}
           placeholder="Confirm Password"
           required={true}
-        ></input>
+          ></input>
       </div>
 
       <div className="btn">
@@ -102,6 +105,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
       </div>
       </div>
     </form>
+          </div>
 
   );
 };

@@ -17,7 +17,7 @@ export default  function UserMovieList(){
     const dispatch = useDispatch()
     const history = useHistory()
     
-
+    console.log(movie)
     useEffect(() => {
           dispatch(getUserFavorite())
         },[dispatch,user])

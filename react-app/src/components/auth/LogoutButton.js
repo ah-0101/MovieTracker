@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Redirect, useHistory} from 'react-router-dom'
 
@@ -12,7 +12,7 @@ const LogoutButton = ({setAuthenticated}) => {
   // const state = useSelector(state => state.session)
   const dispatch = useDispatch() 
   const history = useHistory()
-
+  const favorite = useSelector(state => Object.keys(state.Favorite))
   const onLogout = async (e) => {
     // await logout();
     await dispatch(logoutUser());
@@ -29,8 +29,10 @@ const LogoutButton = ({setAuthenticated}) => {
   return(
 <>
 <div className="edge-btns_out">
+   
 
 <div style={{paddingBottom:"7px", paddingRight:"10px"}}>
+  
    <button  className='logging-out' onClick={redirect}>Watchlist</button>
 </div>
    <button className='logging-out' onClick={onLogout}>Log out</button>

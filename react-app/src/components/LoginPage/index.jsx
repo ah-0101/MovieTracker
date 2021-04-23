@@ -1,18 +1,27 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
 import {Redirect,useHistory} from 'react-router-dom'
-import {useState} from 'react'
-import './LoginPage.css'
+import {useState, useEffect} from 'react'
+import {useDispatch} from 'react-redux'
+
+import {getUserFavorite} from '../../store/favorite'
+
 import movietrackerLogo from "../../images/movietrackerLogo.png"
 import iconSearch from '../../images/iconSearch.jpg'
+import './LoginPage.css'
 export default function LoginPage() {
     const [classHandler, setClassHandler] = useState("search-icon")
     const [classHandler2, setClassHandler2] = useState("search-ind-none")
     const [search, setSearch] = useState([])
     const [value, setValue] = useState([])
     const [movId, setMovId] = useState(0)
+
     const history = useHistory()
-    
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getUserFavorite())
+      },[dispatch])
 
     const handleSearchType = async (e) => {
         let keyword = e.target.value
