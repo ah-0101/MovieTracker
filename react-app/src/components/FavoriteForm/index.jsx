@@ -24,7 +24,7 @@ export default function FavoriteForm({setTrailerMovieStart}){
             e.preventDefault();
             dispatch(addFavorite(id.movieId,user.id))
             setAddFav((prev) => !prev)
-            setAdded('Added to Watchlist ✅')
+            setAdded('Added to Watchlist ✔')
     }
     useEffect(() => dispatch(getOneFavorite(id.movieId)),[dispatch])
     const removeFavSubmit = async (e) => {
@@ -65,10 +65,10 @@ export default function FavoriteForm({setTrailerMovieStart}){
             <button onClick={handleLoginFirst} className="btn-watchlist"  >Add to Watchlist<div style={{ marginTop:'-24px',color:'red',fontSize:'40px',color:"transparent"}}><LoginFormModal/></div></button>
         }
              
-            <button onClick={handleTrailerStart} className="btn-watchlist"  >Watch Trailer</button>
         
             </>
             {addFav && <button className="btn-watchlist" onClick={removeFavSubmit}>Remove from Watchlist</button>}
+            <button onClick={handleTrailerStart} className="btn-watchlist"  >Watch Trailer</button>
             </div>
             
         </>

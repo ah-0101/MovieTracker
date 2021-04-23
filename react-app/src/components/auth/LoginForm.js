@@ -37,7 +37,6 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   if(sessionUser){
     return <Redirect to='/'/>
   }
-  // console.log(loginUser({ email: "demo@aa.io", password: "password" }))
   return (
     <>
     <div >
@@ -72,8 +71,14 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           onChange={updatePassword}
           required={true}
           />
+          <div>
+
         <button type="submit">Sign in</button>
+          </div>
+          <div style={{marginTop:"10px"}}>
+
         <button className="demo-login" type="button" onClick={handleDemoLogin}>Demo Sign In</button>
+          </div>
       </div>
       </div>
 

@@ -20,7 +20,6 @@ def post_favorite():
 @favorite_routes.route('/')
 def movie_favorite():
     favorites = Favorite.query.filter(Favorite.user_id==current_user.id).all()
-    # print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',current_user.id)
     return jsonify([favorite.to_dict() for favorite in favorites])
 
 

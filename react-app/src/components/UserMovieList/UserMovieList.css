@@ -12,7 +12,7 @@
 
 .top-rapper {
     /* margin-top: 30%; */
-    border-right: 3px solid rgb(241, 237, 237);
+    /* border-right: 3px solid rgb(241, 237, 237); */
     background-image: url(../../images/movietrackerLogo.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -55,7 +55,7 @@
 
 .movie-name_div {
     color: #136cb2;
-    margin-left: 43%;
+    margin-left: 53%;
     position: relative;
     top: -220px;
 }
@@ -67,7 +67,7 @@
 .rate {
     position: relative;
     bottom: 60px;
-    margin-right: 44%;
+    margin-right: 38.9%;
     height: 46px;
     padding: 0 10px;
 }

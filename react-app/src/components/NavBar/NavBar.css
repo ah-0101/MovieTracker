@@ -1,6 +1,6 @@
 .nav-is_nav {
-    background-color: rgb(220, 235, 222);
-    filter: drop-shadow(16px 16px 20px rgb(28, 134, 233));
+    background-color: rgb(243, 234, 234);
+    filter: drop-shadow(6px 6px 50px rgb(28, 134, 233));
     height: 55px;
     position: -webkit-sticky;
     position: sticky;
@@ -62,10 +62,10 @@ ul.nav li.current a {
     background: #6097df;
 }
 
-.sig .btn-padding {
+.btn-padding {
     /* display: flex; */
     /* justify-content: flex-end; */
-    /* margin-right: 2%; */
+    padding-right: 10px;
 }
 
 .signup-btn {
@@ -92,6 +92,7 @@ ul.nav li.current a {
 
 .btn-padding_signup {
     margin-right: 6%;
+    padding-right: 15px;
 }
 
 .active {

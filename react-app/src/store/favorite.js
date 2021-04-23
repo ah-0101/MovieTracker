@@ -38,20 +38,7 @@ export const removeOneFavorite = (favId) => async(dispatch) => {
 
 }
 
-// export const deleteUserComment = (commentId) => async dispatch => {
-//     const res = await fetch(`/api/videos/comment/${commentId}/delete`, {
-//       method: "DELETE",
-//       headers: {
-//         "Content-Type": "application/json"
-//       }
-//     })
-//     console.log("response", res)
-//     const data = await res.json()
 
-//     dispatch(deleteComment())
-
-//     return data
-//   }
 
 
 export const getOneFavorite = (favId) => async(dispatch) => {
@@ -64,17 +51,13 @@ export const getOneFavorite = (favId) => async(dispatch) => {
 export const getUserFavorite = (userId) => async(dispatch) => {
     const res = await fetch(`/api/favorites/`)
     const jsonRes = await res.json();
-    // console.log(':>:>:>:>:>:>:>>>:>:>:', jsonRes)
+
     dispatch(readUserFavorite(jsonRes))
     return res
 }
 
 
 export const addFavorite = (movie_id, user_id) => async(dispatch) => {
-    // console.log(JSON.stringify({
-    //     movie_id,
-    //     user_id
-    // }))
     const response = await fetch('/api/favorites/', {
         method: 'POST',
         headers: {
@@ -87,7 +70,6 @@ export const addFavorite = (movie_id, user_id) => async(dispatch) => {
     })
     if (response.ok) {
         const data = await response.json();
-        console.log('data from frontend', data)
         dispatch(setFavorite(data));
         return response;
     }

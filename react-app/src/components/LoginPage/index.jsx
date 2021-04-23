@@ -98,8 +98,8 @@ export default function LoginPage() {
                                         </div>
                                             <div className="inner-search">
                                                 <div  className="inner-search-result">
-                                            <span key={movie.id} >
-                                            <b id={movie.id} key={movie.id} style={{cursor: 'pointer'}} onClick={handleNavigate}>{movie.movie_name}</b>
+                                            <span className="strong-search" key={movie.id}  id={movie.id} key={movie.id} style={{cursor: 'pointer'}} onClick={handleNavigate} >
+                                            <strong  id={movie.id} key={movie.id} style={{cursor: 'pointer'}}>{movie.movie_name}</strong>
                                             </span>
                                                 </div>
                                         </div>

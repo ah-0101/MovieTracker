@@ -238,7 +238,7 @@
     }
     
     .inner-result-field>ul :hover {
-        background-color: #e6ebe2;
+        background-color: #f0f0f0;
     }
     
     .inner-search-result>span {
@@ -275,4 +275,8 @@
     
     .explore-btn:hover {
         border: 1px solid rgb(189, 186, 186);
+    }
+    
+    .strong-search {
+        height: 21px;
     }
