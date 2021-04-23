@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -9,8 +10,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import {useHistory} from 'react-router-dom'
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
+import './imageCard.css'
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -33,12 +35,11 @@ export default function ImgMediaCard({movie,setTrailerUrl,setMuted}) {
 
 
   const handleMoviePage = (e) => {
-    console.log(e.target.id)
     e.preventDefault();
     history.push(`/${e.target.id}`)
   }
 
-    
+  
   const handleTrailerStart = (e) => {
     e.preventDefault();
     const arr1 = ['','https://www.youtube.com/watch?v=Z5CWOcrw-h8','https://www.youtube.com/watch?v=_V1lLSS9lCc','https://www.youtube.com/watch?v=7JCK1AUZL1w',
@@ -58,7 +59,6 @@ export default function ImgMediaCard({movie,setTrailerUrl,setMuted}) {
       if(i === Number(e.target.id)){
         urlScu = arr1[i]
         urlIdx = i
-        console.log('ss',e.target.id)
       }
     }
     
@@ -74,14 +74,8 @@ export default function ImgMediaCard({movie,setTrailerUrl,setMuted}) {
     setMuted(false)
   }
 
-  //!------------------
-
-
-
-  //!------------------
-
   return (
-      
+      <>
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -103,12 +97,13 @@ export default function ImgMediaCard({movie,setTrailerUrl,setMuted}) {
       </CardActionArea>
       <CardActions>
         <button className={classes.explore} id={movie.id} onClick={handleMoviePage} >
-         See More...
+         Movie Page
         </button>
         <button className={classes.explore}  id={movie.id} value={movie.movie_name} onClick={handleTrailerStart}>
           Watch Trailer
         </button>
       </CardActions>
     </Card>
+    </>
   );
 }

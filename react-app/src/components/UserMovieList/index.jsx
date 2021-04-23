@@ -98,7 +98,7 @@ export default  function UserMovieList(){
           </div>
    
 
-          <button style={{marginLeft:"46%"}} value={movie.id} onClick={removeFavSubmit} className="btn-watchlist" >Remove from Watchlist</button>
+          <button style={{marginLeft:"51.5%"}} value={movie.id} onClick={removeFavSubmit} className="btn-watchlist" >Remove from Watchlist</button>
            </>
        ))}
        </div>

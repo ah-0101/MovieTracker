@@ -42,8 +42,6 @@ const Movie = () => {
     const categoriesState = useSelector(state => state.categories)
     const categories = Object.values(categoriesState)
     const movies = Object.values(stateMovie)
-    // const [play,setPlay] = useState(false)
-    console.log('?>>>>>>>>>>>>>>>>>>>>>?',movies)
     const [spacing, setSpacing] = React.useState(2);
     const [movieId, setMovieId] = useState(0) 
     const [trailerUrl, setTrailerUrl] = useState('https://www.youtube.com/watch?v=QYU8zydUqD8')
@@ -56,34 +54,19 @@ const Movie = () => {
       setSpacing(Number(event.target.value));
     };
   
-    // console.log("movie >>>",movies)
-    // console.log("user >>>>>>>",user)
-    // console.log("user >>>>>>>",category)
     
-    movies.map(movie => {
-      if(movie.category_id === 1){
-        console.log(movie)
-      }
-    })
 
     useEffect(()=> {
             dispatch(loadMovie());
             dispatch(addCategory());
     },[dispatch])
     
-// const i = <ReactPlayer url="https://www.youtube.com/watch?v=-5KAN9_CzSA" />
-// const hoverStyle = {
-//   "&:hover": {
-//     i:setPlay('true')
-//   }
-  
-// };
 
     const handleClickMovie = (e) => {
       e.preventDefault();
       setMovieId(e.target.id)
     }
-console.log('movie id is here ',movieId)
+
     return (
         <>
         <div className="movie-logo-holder">
@@ -103,91 +86,6 @@ console.log('movie id is here ',movieId)
           
           />
       </div>
-
-{/*       
-          <div className="action-movie-title">ٍAction Movies</div>
-          <div className="action-movie-div-1">
-          {movies?.map(movie =>(
-            <>
-          {
-            <div > { movie.category_id === 1 && <img  id={movie.id}  width='300px' height='220' src={movie.movie_url} alt='nothing' />}
-            {movie.category_id === 1 &&
-              <NavLink to={`/${ movie.id}`}>movie info</NavLink>}
-            </div> 
-            
-            
-          } 
-          </>
-        ))}
-        </div>
-        <div>
-
-          <div className="horror-movie-title"> Horror Movies</div>
-          <div className="horror-movie-div">
-          {movies?.map(movie =>(
-            <>
-          <div> 
-            {movie.category_id === 2 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' /> }  </div>
-          
-          </>
-        ))}
-        </div>
-
-          <div className="comedies-movie-title">ٍComedies</div>
-       
-          <div className="comedies-movie-div">
-          {movies?.map(movie =>(
-            <>
-          <div> {movie.category_id === 3 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
-          
-          </>
-        ))}
-        </div>
-        </div>
-
-        <div>
-          <div className="kids-movie-title">ٍKids' Movies</div>
-          <div className="kids-movie-div">
-          {movies?.map(movie =>(
-            <>
-          <div> {movie.category_id === 4 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
-          
-          </>
-        ))}
-
-        </div>
-        </div>
-
-        <div>
-          <div className="tv-movie-title">ٍSeries And Tv Shows</div>
-          <div className="tv-movie-div">
-          {movies?.map(movie =>(
-            <>
-          <div>{movie.category_id === 5 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
-          
-          </>
-        ))}
-        
-        </div>
-        </div>
-
-        <div>
-          <div className="thriller-movie-title">ٍThriller Movies</div>
-          <div className="thriller-movie-div">
-          {movies?.map(movie =>(
-            <>
-          <div> {movie.category_id === 6 && <img  id={movie.id}   width='300px' height='220' src={movie.movie_url} alt='nothing' />} </div>
-          
-          
-          </>
-        ))}
-        </div>
-        </div>
-     
-        </header>
-
-        </div>
-         */}
     <div className="card-container">
 
     {movies?.map(movie =>(
@@ -196,7 +94,7 @@ console.log('movie id is here ',movieId)
         </>
                   ))}
                   </div>
-{/* </html> */}
+
 </>
     )
 }
