@@ -6,7 +6,7 @@
     font-size: 18px;
     letter-spacing: .25px;
     line-height: 18px;
-    height: 39px;
+    height: 42px;
     width: 90px;
     text-align: center;
     /* padding: 9px 23px; */
@@ -25,4 +25,18 @@
     display: flex;
     /* flex-wrap: wrap; */
     padding: 10px;
+}
+
+.watchlist-number {
+    /* height: 20px; */
+    /* width: 30px; */
+    display: flex;
+    justify-content: center;
+    /* background-color: rgb(12, 146, 12); */
+    border-radius: 200px;
+    font-size: 15px;
+    /* z-index: 1; */
+    /* margin-left: 100px; */
+    /* position: absolute; */
+    /* top: 20%; */
 }

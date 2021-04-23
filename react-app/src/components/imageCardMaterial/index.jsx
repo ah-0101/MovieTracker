@@ -37,6 +37,11 @@ export default function ImgMediaCard({movie,setTrailerUrl,setMuted}) {
   const handleMoviePage = (e) => {
     e.preventDefault();
     history.push(`/${e.target.id}`)
+    
+    window.scroll({
+      top: 130,
+      left: 230,
+    });
   }
 
   

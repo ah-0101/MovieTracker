@@ -6,6 +6,10 @@
 }
 */
 
+.outer-signin_form {
+    height: 600px;
+}
+
 
 /* .email-input {
     width: 400px;
@@ -16,7 +20,7 @@
 
 .login-form {
     width: 550px;
-    height: 600px;
+    height: 550px;
     background-color: hsl(0, 0%, 100%);
     position: relative;
     top: 10%;

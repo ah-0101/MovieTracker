@@ -6,9 +6,10 @@ import './NavBar.css'
 import LoginFormModal from '../auth/LoginFormModal'
 import SignupFormModal from '../auth/SignupFormModal'
 
-              const NavBar = ({ setAuthenticated }) => {
-                const user = useSelector(state => state.session.user)
-                return (
+  const NavBar = ({ setAuthenticated }) => {
+    const user = useSelector(state => state.session.user)
+  
+    return (
                   <nav className='nav-is_nav'>
       <ul className='nav'>
         <li>
